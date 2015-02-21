@@ -11,11 +11,17 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ORM\Exhibit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Interest.cs" />
+<<<<<<< HEAD
     <Compile Include="$(MSBuildThisFileDirectory)ORM\ExhibitInterest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CurrentUser.cs" />
+=======
+    <Compile Include="$(MSBuildThisFileDirectory)Db.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ORM\Display.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ORM\DisplayInterest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ORM\Exhibit.cs" />
+>>>>>>> 1829e96afaeea46eb922c654c9e1aa1d9d688174
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />

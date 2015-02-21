@@ -15,6 +15,8 @@ namespace Heinzight
 			var builder = new ContainerBuilder ();
 
 			ServiceManager.Initialize (builder.Build ());
+
+
 		}
 	}
 }

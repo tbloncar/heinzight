@@ -8,14 +8,25 @@ namespace Heinzight.Core
 	namespace Orm
 	{
 		// <summary>
-		// Represents an interest (e.g. "political figures")
+		// Represents a display (e.g., "Ferris Wheel")
 		// </summary>
-		public class Interest
+		public class Display
 		{
 			[PrimaryKey, AutoIncrement]
 			public int ID { get; set; }
 			public string Name { get; set; }
 			public string FeaturedImagePath { get; set; }
+			public string ChildContent { get; set; }
+			public string AdultContent { get; set; }
+
+			[Indexed]
+			public string BeaconUUID { get; set; }
+
+			[Indexed]
+			public int BeaconMajorNum { get; set; }
+
+			[Indexed]
+			public int BeaconMinorNum { get; set; }
 
 			[ForeignKey(typeof(Location))]
 			public int LocationId { get; set; }
@@ -23,8 +34,14 @@ namespace Heinzight.Core
 			[ManyToOne]
 			public Location Location { get; set; }
 
+			[ForeignKey(typeof(Exhibit))]
+			public int ExhibitId { get; set; }
+
+			[ManyToOne]
+			public Exhibit Exhibit { get; set; }
+
 			[ManyToMany(typeof(DisplayInterest))]
-			public List<Display> Displays { get; set; }
+			public List<Interest> Interests { get; set; }
 		}
 	}
 }

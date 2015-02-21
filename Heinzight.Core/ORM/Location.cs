@@ -21,6 +21,12 @@ namespace Heinzight.Core
 
 			[OneToMany(CascadeOperations = CascadeOperation.All)]
 			public List<Exhibit> Exhibits { get; set; }
+
+			[OneToMany(CascadeOperations = CascadeOperation.All)]
+			public List<Display> Displays { get; set; }
+
+			[OneToMany(CascadeOperations = CascadeOperation.All)]
+			public List<Interest> Interests { get; set; }
 		}
 	}
 }
