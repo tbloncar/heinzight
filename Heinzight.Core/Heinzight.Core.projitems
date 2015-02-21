@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Interest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\ExhibitInterest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CurrentUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />

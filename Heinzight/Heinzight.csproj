@@ -127,10 +127,15 @@
       <DependentUpon>AgeSelectionViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\Landing\LandingNavigationController.cs" />
+    <Compile Include="ViewControllers\Landing\InterestSelectionViewController.cs" />
+    <Compile Include="ViewControllers\Landing\InterestSelectionViewController.designer.cs">
+      <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\AgeSelectionViewController.xib" />
+    <InterfaceDefinition Include="ViewControllers\Landing\InterestSelectionViewController.xib" />
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
