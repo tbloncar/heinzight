@@ -8,7 +8,7 @@ namespace Heinzight.Core
 	namespace Orm
 	{
 		// <summary>
-		// Represents an exhibit (e.g., "WWII Stamp Collection")
+		// Represents an exhibit (e.g. "Mr. Rogers' Neighborhood")
 		// </summary>
 		public class Exhibit
 		{
@@ -16,17 +16,6 @@ namespace Heinzight.Core
 			public int ID { get; set; }
 			public string Name { get; set; }
 			public string FeaturedImagePath { get; set; }
-			public string ChildContent { get; set; }
-			public string AdultContent { get; set; }
-
-			[Indexed]
-			public string BeaconUUID { get; set; }
-
-			[Indexed]
-			public int BeaconMajorNum { get; set; }
-
-			[Indexed]
-			public int BeaconMinorNum { get; set; }
 
 			[ForeignKey(typeof(Location))]
 			public int LocationId { get; set; }
@@ -35,10 +24,7 @@ namespace Heinzight.Core
 			public Location Location { get; set; }
 
 			[OneToMany(CascadeOperations = CascadeOperation.All)]
-			public List<Interest> Exhibits { get; set; }
-
-			[ManyToMany(typeof(ExhibitInterest))]
-			public List<Interest> Interests { get; set; }
+			public List<Display> Displays { get; set; }
 		}
 	}
 }

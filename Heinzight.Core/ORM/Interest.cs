@@ -23,8 +23,8 @@ namespace Heinzight.Core
 			[ManyToOne]
 			public Location Location { get; set; }
 
-			[ManyToMany(typeof(ExhibitInterest))]
-			public List<Exhibit> Exhibits { get; set; }
+			[ManyToMany(typeof(DisplayInterest))]
+			public List<Display> Displays { get; set; }
 		}
 	}
 }
