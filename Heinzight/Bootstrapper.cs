@@ -4,6 +4,7 @@ using System.Linq;
 using Autofac;
 
 using SQLite;
+using SQLiteNetExtensions.Extensions;
 
 using Heinzight.Core;
 using Heinzight.Core.ORM;
@@ -26,12 +27,13 @@ namespace Heinzight
 			db.Setup ();
 			db.Seed ();
 
+			// Log to prove we've saved somethin'
 			using (var conn = db.GetConnection ()) {
-				var table = conn.Table<Interest> ();
+				var displayInterests = conn.GetAllWithChildren <DisplayInterest> ().ToList();
 
-				foreach (var s in table) {
-					Console.WriteLine (s.ID + " " + s.Name);
-				}
+				foreach (var di in displayInterests) {
+					Console.WriteLine (di.Interest.Name + " " + di.Display.Name);
+				} 
 			}
 		}
 	}
