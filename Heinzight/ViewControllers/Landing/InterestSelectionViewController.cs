@@ -30,11 +30,7 @@ namespace Heinzight
 			startTourButton.Hidden = true;
 			startTourButton.TouchUpInside += (sender, e) => Submit();
 
-			List<Interest> interests;
-			using (var conn = Db.Instance.GetConnection ()) 
-			{
-				interests = conn.Table<Interest> ().ToList();
-			}
+			var interests = InterestDAO.GetInterestsForLocation (CurrentUser.Instance.Location);
 
 			var lastY = 0f;
 			foreach (var interest in interests) 
