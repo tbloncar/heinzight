@@ -1,9 +1,13 @@
 ﻿
 using System;
 using System.Drawing;
+using System.Device.Location;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+
+using Heinzight.Core;
+using Heinzight.Core.DAO;
 
 namespace Heinzight
 {
@@ -17,7 +21,18 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
+			var nearbyLocations = LocationDAO.GetLocationsByCoordinates (new GeoCoordinate {
+				Latitude = 40.4463499,
+				Longitude = -79.9925008
+			});
+
+			mainLogoImageView.Image = UIImage.FromFile (nearbyLocations [0].LogoPath);
+			secondaryLogoImageView.Image = UIImage.FromFile (nearbyLocations [1].LogoPath);
+
 			continueButton.TouchUpInside += (sender, e) => {
+				// Assign the nearest location to the current user
+				CurrentUser.Instance.Location = nearbyLocations[0];
+
 				NavigationController.PushViewController(new AgeSelectionViewController(), true);
 			};
 

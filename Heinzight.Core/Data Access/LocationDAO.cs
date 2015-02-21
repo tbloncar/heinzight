@@ -21,16 +21,21 @@ namespace Heinzight.Core
 					locations.AddRange(conn.Table<Location>().ToList());
 				}
 
+				// Only add locations within 100 miles of coordinates
 				foreach (var location in locations) {
 					GeoCoordinate gc = new GeoCoordinate { Latitude = (double)location.Latitude, Longitude = (double)location.Longitude };
 
-					if (gc.GetDistanceTo (coordinates) / metersInMile < 10)
+					if (gc.GetDistanceTo (coordinates) / metersInMile < 100)
 					{
 						filteredLocations.Add (location);
 					}
 				}
 
-				return filteredLocations;
+				// Order by distance, nearest first
+				return filteredLocations.OrderBy(l => {
+					GeoCoordinate gc = new GeoCoordinate { Latitude = (double)l.Latitude, Longitude = (double)l.Longitude };
+					return gc.GetDistanceTo(coordinates);
+				}).ToList();
 			}
 		}
 	}

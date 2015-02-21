@@ -101,12 +101,20 @@ namespace Heinzight.Core
 				}
 			};
 				
-			var location = new Location {
+			var location1 = new Location {
 				Name = "Senator John Heinz History Center",
+				LogoPath = "heinz-logo.png",
 				Latitude = 40.4463499m,
 				Longitude = -79.9925008m,
 				Displays = displays,
 				Interests = interests
+			};
+
+			var location2 = new Location {
+				Name = "Pittsburgh Botanic Garden",
+				LogoPath = "garden-logo.png",
+				Latitude = 40.4267116m,
+				Longitude = -80.17704979999999m
 			};
 
 			var exhibit = new Exhibit {
@@ -122,7 +130,8 @@ namespace Heinzight.Core
 			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (5), Display = displays.ElementAt (1) });
 					
 			using (var conn = GetConnection ()) {
-				conn.InsertWithChildren (location, recursive: true);
+				conn.InsertWithChildren (location1, recursive: true);
+				conn.Insert (location2);
 				conn.InsertAllWithChildren (displayInterests);
 				conn.InsertWithChildren (exhibit, recursive: true);
 			}
