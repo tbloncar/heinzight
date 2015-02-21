@@ -6,7 +6,7 @@ using SQLiteNetExtensions.Attributes;
 
 namespace Heinzight.Core
 {
-	namespace Orm
+	namespace ORM
 	{
 		// <summary>
 		// Represents an interest (e.g. "political figures")

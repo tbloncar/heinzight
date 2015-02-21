@@ -6,7 +6,7 @@ using SQLiteNetExtensions.Attributes;
 
 namespace Heinzight.Core
 {
-	namespace Orm
+	namespace ORM
 	{
 		// <summary>
 		// Represents an exhibit (e.g. "Mr. Rogers' Neighborhood")

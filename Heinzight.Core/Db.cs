@@ -2,7 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using SQLite.Net;
-using Heinzight.Core.Orm;
+using Heinzight.Core.ORM;
 
 namespace Heinzight.Core
 {
@@ -27,7 +27,11 @@ namespace Heinzight.Core
 		}
 
 		public SQLiteConnection GetConnection() {
+			#if __IOS__
 			return new SQLiteConnection (new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(), FilePath);
+			#elif
+			return new SQLiteConnection (new SQLite.Net.Platform.Xamarin
+			#endif
 		}
 
 		public bool HasBeenCreated()
@@ -50,6 +54,12 @@ namespace Heinzight.Core
 		public void Delete()
 		{
 			File.Delete(FilePath);
+		}
+
+		public void Setup()
+		{
+			Delete ();
+			Create ();
 		}
 
 		public void Seed() {
