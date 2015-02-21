@@ -18,7 +18,8 @@ namespace Heinzight
 
 			SetCircleButtonDisplay (littleKidViewButton);
 			SetCircleButtonDisplay (adultViewButton);
-			continueButton.Enabled = false;
+			continueButton.Hidden = true;
+			continueButton.Layer.CornerRadius = 12;
 
 			var adultTapGesture = new UITapGestureRecognizer (SelectAdult);
 			adultView.AddGestureRecognizer (adultTapGesture);
@@ -40,16 +41,22 @@ namespace Heinzight
 		void SelectChild()
 		{
 			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Child;
-			_optionHasBeenSelected = true;
-			continueButton.Enabled = true;
+			littleKidViewButton.BackgroundColor = UIColor.LightGray;
+			adultViewButton.BackgroundColor = UIColor.White;
+			EnableContinue ();
 		}
 
 		void SelectAdult()
 		{
 			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Adult;
-			_optionHasBeenSelected = true;
-			continueButton.Enabled = true;
+			adultViewButton.BackgroundColor = UIColor.LightGray;
+			littleKidViewButton.BackgroundColor = UIColor.White;
+			EnableContinue ();
+		}
 
+		void EnableContinue() {
+			_optionHasBeenSelected = true;
+			continueButton.Hidden = false;
 		}
 
 		void NextPage()
