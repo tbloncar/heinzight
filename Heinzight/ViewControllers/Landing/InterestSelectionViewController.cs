@@ -27,6 +27,8 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
+			startTourButton.Hidden = true;
+
 			List<Interest> interests;
 			using (var conn = Db.Instance.GetConnection ()) 
 			{
@@ -79,7 +81,7 @@ namespace Heinzight
 				button.Layer.BorderColor = UIColor.DarkGray.CGColor;
 			}
 
-			continueButton.Visible = userSelectedInterests.Count != 0;
+			startTourButton.Hidden = userSelectedInterests.Count == 0;
 		}
 	}
 }
