@@ -19,6 +19,9 @@ namespace Heinzight
 		MonoTouch.UIKit.UIView adultViewButton { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIButton continueButton { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel introTextLabel { get; set; }
 
 		[Outlet]
@@ -42,6 +45,11 @@ namespace Heinzight
 				adultViewButton = null;
 			}
 
+			if (introTextLabel != null) {
+				introTextLabel.Dispose ();
+				introTextLabel = null;
+			}
+
 			if (littleKidView != null) {
 				littleKidView.Dispose ();
 				littleKidView = null;
@@ -52,14 +60,14 @@ namespace Heinzight
 				littleKidViewButton = null;
 			}
 
-			if (introTextLabel != null) {
-				introTextLabel.Dispose ();
-				introTextLabel = null;
-			}
-
 			if (questionLabel != null) {
 				questionLabel.Dispose ();
 				questionLabel = null;
+			}
+
+			if (continueButton != null) {
+				continueButton.Dispose ();
+				continueButton = null;
 			}
 		}
 	}

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Drawing;
-
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-
 using Heinzight.Core;
 
 namespace Heinzight
 {
-	public delegate void OnAgeSelected(CurrentUser.AgeOptions age);
-
 	public partial class AgeSelectionViewController : UIViewController
 	{
-		public event OnAgeSelected OnAgeSelected;
+		bool _optionHasBeenSelected = false;
 
 		public AgeSelectionViewController () : base ("AgeSelectionViewController", null)
 		{
@@ -24,13 +18,15 @@ namespace Heinzight
 
 			SetCircleButtonDisplay (littleKidViewButton);
 			SetCircleButtonDisplay (adultViewButton);
+			continueButton.Enabled = false;
 
-			var adultTapGesture = new UITapGestureRecognizer (OptionSelected(CurrentUser.AgeOptions.Adult));
+			var adultTapGesture = new UITapGestureRecognizer (SelectAdult);
 			adultView.AddGestureRecognizer (adultTapGesture);
 
-			var childTapGesture = new UITapGestureRecognizer (OptionSelected(CurrentUser.AgeOptions.Child));
+			var childTapGesture = new UITapGestureRecognizer (SelectChild);
 			littleKidView.AddGestureRecognizer (childTapGesture);
 
+			continueButton.TouchUpInside += (sender, e) => NextPage();
 		}
 
 		static void SetCircleButtonDisplay(UIView v)
@@ -41,11 +37,27 @@ namespace Heinzight
 			v.Layer.BorderWidth = 2.0f;
 		}
 
-		NSAction OptionSelected(CurrentUser.AgeOptions age) 
+		void SelectChild()
 		{
-			CurrentUser.Instance.Age = age;
-			OnAgeSelected (age);
-			return null;
+			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Child;
+			_optionHasBeenSelected = true;
+			continueButton.Enabled = true;
+		}
+
+		void SelectAdult()
+		{
+			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Adult;
+			_optionHasBeenSelected = true;
+			continueButton.Enabled = true;
+
+		}
+
+		void NextPage()
+		{
+			if (_optionHasBeenSelected) 
+			{
+				NavigationController.PushViewController (new InterestSelectionViewController (), true);
+			}
 		}
 	}
 }

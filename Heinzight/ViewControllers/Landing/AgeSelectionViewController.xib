@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="adultView" destination="JRo-Y2-LWP" id="Zfl-Sn-RLI"/>
                 <outlet property="adultViewButton" destination="neI-FG-fKY" id="sFh-fw-B8t"/>
+                <outlet property="continueButton" destination="OMh-4i-9dG" id="3iq-hX-zPp"/>
                 <outlet property="introTextLabel" destination="bAZ-cq-Gju" id="ngu-an-sUn"/>
                 <outlet property="littleKidView" destination="g0Z-5I-NA0" id="bDl-fL-Wke"/>
                 <outlet property="littleKidViewButton" destination="dyc-YB-gHa" id="LIZ-jf-abD"/>
@@ -58,6 +59,14 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-4i-9dG">
+                    <rect key="frame" x="129" y="475" width="62" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
