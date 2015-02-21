@@ -35,7 +35,8 @@ namespace Heinzight
 				} 
 			}
 
-			Heinzight.BeaconService.StartService();
+			var beaconService = new BeaconService ();
+			beaconService.StartService();
 		}
 	}
 }

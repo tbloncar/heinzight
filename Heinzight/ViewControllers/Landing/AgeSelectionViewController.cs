@@ -30,6 +30,12 @@ namespace Heinzight
 			continueButton.TouchUpInside += (sender, e) => NextPage();
 		}
 
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+//			View.RemoveGestureRecognizer ();
+		}
+
 		static void SetCircleButtonDisplay(UIView v)
 		{
 			v.Layer.CornerRadius = 17;

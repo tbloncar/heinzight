@@ -10,8 +10,6 @@ using Heinzight.Core;
 using Heinzight.Core.ORM;
 using Heinzight.Core.DAO;
 
-//using SQLite.Net;
-
 namespace Heinzight
 {
 	public partial class InterestSelectionViewController : UIViewController
