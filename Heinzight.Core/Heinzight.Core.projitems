@@ -22,5 +22,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data Access\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>
