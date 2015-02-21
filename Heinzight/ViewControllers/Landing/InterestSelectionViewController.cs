@@ -8,7 +8,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 using Heinzight.Core;
-using Heinzight.Core.Orm;
+using Heinzight.Core.ORM;
 
 //using SQLite.Net;
 
