@@ -14,6 +14,9 @@ namespace Heinzight
 	{
 		[Outlet]
 		MonoTouch.UIKit.UIScrollView interestsScrollView { get; set; }
+
+		[Action ("continueButton:")]
+		partial void continueButton (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
