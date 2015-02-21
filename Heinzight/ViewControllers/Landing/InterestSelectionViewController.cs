@@ -8,6 +8,7 @@ using MonoTouch.UIKit;
 
 using Heinzight.Core;
 using Heinzight.Core.ORM;
+using Heinzight.Core.DAO;
 
 //using SQLite.Net;
 
@@ -27,6 +28,7 @@ namespace Heinzight
 			base.ViewDidLoad ();
 
 			startTourButton.Hidden = true;
+			startTourButton.TouchUpInside += (sender, e) => Submit();
 
 			List<Interest> interests;
 			using (var conn = Db.Instance.GetConnection ()) 
@@ -85,7 +87,9 @@ namespace Heinzight
 
 		void Submit()
 		{
-			// TODO: Save interests
+			// Set displays (cached for app lifecycle) based on user's selected interests
+			CurrentUser.Instance.Displays = DisplayDAO.GetDisplaysForInterests (userSelectedInterests);
+
 			PresentViewController (null, true, null);
 		}
 	}

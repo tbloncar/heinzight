@@ -25,7 +25,7 @@ namespace Heinzight.Core
 		}
 		private CurrentUser() {}
 		public AgeOptions Age { get ; set; }
-		public List<string> Interests { get; set; }
+		public List<Display> Displays { get; set; }
 		public Location Location { get; set; }
 	}
 }
