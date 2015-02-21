@@ -43,6 +43,7 @@ namespace Heinzight
 
 		NSAction OptionSelected(CurrentUser.AgeOptions age) 
 		{
+			CurrentUser.Instance.Age = age;
 			OnAgeSelected (age);
 			return null;
 		}
