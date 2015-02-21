@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Autofac;
 
 namespace Heinzight.Core
@@ -6,8 +7,7 @@ namespace Heinzight.Core
 	public class CurrentUser
 	{
 		private static CurrentUser instance;
-
-		private CurrentUser() {}
+		public enum AgeOptions { Adult, Child };
 
 		public static CurrentUser Instance
 		{
@@ -19,6 +19,10 @@ namespace Heinzight.Core
 				}
 				return instance;
 			}
+
 		}
+		private CurrentUser() {}
+		public AgeOptions Age { get ; set; }
+		public List<string> Interests { get; set; }
 	}
 }
