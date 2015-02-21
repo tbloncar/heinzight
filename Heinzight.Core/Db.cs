@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+
 using SQLite.Net;
+using SQLiteNetExtensions.Extensions;
+
 using Heinzight.Core.ORM;
 
 namespace Heinzight.Core
@@ -103,7 +107,7 @@ namespace Heinzight.Core
 			};
 					
 			using (var conn = GetConnection ()) {
-				conn.Insert (location);
+				conn.InsertWithChildren (location, recursive: true);
 			}
 		}
 	}

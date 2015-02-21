@@ -27,7 +27,7 @@ namespace Heinzight
 			db.Seed ();
 
 			using (var conn = db.GetConnection ()) {
-				var table = conn.Table<Location> ();
+				var table = conn.Table<Interest> ();
 
 				foreach (var s in table) {
 					Console.WriteLine (s.ID + " " + s.Name);
