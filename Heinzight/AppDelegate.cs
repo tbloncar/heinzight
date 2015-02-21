@@ -25,7 +25,7 @@ namespace Heinzight
 			Bootstrapper.Initialize ();
 
 			var window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.RootViewController = new LandingViewController ();;
+			window.RootViewController = new LandingNavigationController ();;
 			window.MakeKeyAndVisible ();
 		}
 		

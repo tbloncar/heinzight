@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\person.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -113,6 +114,7 @@
     <Compile Include="ViewControllers\Landing\AgeSelectionViewController.designer.cs">
       <DependentUpon>AgeSelectionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\Landing\LandingNavigationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
