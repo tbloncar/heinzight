@@ -7,9 +7,9 @@ using MonoTouch.UIKit;
 
 namespace Heinzight
 {
-	public partial class LandingViewController : UIViewController
+	public partial class AgeSelectionViewController : UIViewController
 	{
-		public LandingViewController () : base ("LandingViewController", null)
+		public AgeSelectionViewController () : base ("AgeSelectionViewController", null)
 		{
 		}
 
@@ -24,7 +24,7 @@ namespace Heinzight
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 	}
