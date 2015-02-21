@@ -1,23 +1,17 @@
 ﻿<Properties StartupItem="Heinzight/Heinzight.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5.8.1" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Heinzight" expanded="True">
-            <Node name="Resources" expanded="True" />
-            <Node name="ViewControllers" expanded="True">
-              <Node name="Landing" expanded="True">
-                <Node name="InterestSelectionViewController.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight.Core/Db.cs">
+    <Files>
+      <File FileName="Heinzight.Core/ServiceManager.cs" Line="1" Column="1" />
+      <File FileName="Heinzight.Core/ORM/Display.cs" Line="34" Column="34" />
+      <File FileName="Heinzight.Core/Db.cs" Line="31" Column="31" />
+      <File FileName="Heinzight.Core/ORM/Location.cs" Line="29" Column="29" />
+      <File FileName="Heinzight.Core/ORM/DisplayInterest.cs" Line="29" Column="29" />
+      <File FileName="Heinzight.Core/ORM/Interest.cs" Line="29" Column="29" />
+      <File FileName="Heinzight.Core/SQLite.cs" Line="4" Column="4" />
+      <File FileName="Heinzight/Bootstrapper.cs" Line="17" Column="17" />
+      <File FileName="Heinzight.Core/ORM/Exhibit.cs" Line="34" Column="34" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

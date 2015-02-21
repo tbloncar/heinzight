@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using SQLite;
+using SQLite.Net;
 using Heinzight.Core.Orm;
 
 namespace Heinzight.Core
@@ -14,7 +14,7 @@ namespace Heinzight.Core
 
 		public string FilePath = Path.Combine(Environment.GetFolderPath (Environment.SpecialFolder.Personal), "heinzight");
 
-		public static Db GetInstance
+		public static Db Instance
 		{
 			get
 			{
@@ -27,7 +27,7 @@ namespace Heinzight.Core
 		}
 
 		public SQLiteConnection GetConnection() {
-			return new SQLiteConnection (FilePath);
+			return new SQLiteConnection (new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(), FilePath);
 		}
 
 		public bool HasBeenCreated()
