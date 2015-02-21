@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+
 using SQLite.Net;
-using Heinzight.Core.Orm;
+using SQLiteNetExtensions.Extensions;
+
+using Heinzight.Core.ORM;
 
 namespace Heinzight.Core
 {
@@ -27,7 +31,11 @@ namespace Heinzight.Core
 		}
 
 		public SQLiteConnection GetConnection() {
+			#if __IOS__
 			return new SQLiteConnection (new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(), FilePath);
+			#elif
+			return new SQLiteConnection (new SQLite.Net.Platform.Xamarin
+			#endif
 		}
 
 		public bool HasBeenCreated()
@@ -50,6 +58,12 @@ namespace Heinzight.Core
 		public void Delete()
 		{
 			File.Delete(FilePath);
+		}
+
+		public void Setup()
+		{
+			Delete ();
+			Create ();
 		}
 
 		public void Seed() {
@@ -93,7 +107,7 @@ namespace Heinzight.Core
 			};
 					
 			using (var conn = GetConnection ()) {
-				conn.Insert (location);
+				conn.InsertWithChildren (location, recursive: true);
 			}
 		}
 	}

@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Linq;
 
 using Autofac;
 
 using SQLite;
 
 using Heinzight.Core;
-using Heinzight.Core.Orm;
+using Heinzight.Core.ORM;
 
 namespace Heinzight
 {
@@ -21,12 +22,13 @@ namespace Heinzight
 
 			var db = Db.Instance;
 
-			db.Delete ();
-			db.Create ();
+			// Setup and seed the database
+			db.Setup ();
 			db.Seed ();
 
 			using (var conn = db.GetConnection ()) {
-				var table = conn.Table<Location> ();
+				var table = conn.Table<Interest> ();
+
 				foreach (var s in table) {
 					Console.WriteLine (s.ID + " " + s.Name);
 				}
