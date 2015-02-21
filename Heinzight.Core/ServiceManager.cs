@@ -24,6 +24,8 @@ namespace Heinzight.Core
 
 		public static void Initialize (IContainer c)
 		{
+			if (_container != null)
+				throw new Exception ("Don't initialize twice");
 			_container = c;
 		}
 	}
