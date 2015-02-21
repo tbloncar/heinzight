@@ -19,6 +19,15 @@ namespace Heinzight
 			get;
 			set;
 		}
+
+		public override void FinishedLaunching (UIApplication application)
+		{
+			Bootstrapper.Initialize ();
+
+			var window = new UIWindow (UIScreen.MainScreen.Bounds);
+			window.RootViewController = new LandingViewController ();;
+			window.MakeKeyAndVisible ();
+		}
 		
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.

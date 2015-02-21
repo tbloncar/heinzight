@@ -104,15 +104,18 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="HeinzightViewController.cs" />
-    <Compile Include="HeinzightViewController.designer.cs">
-      <DependentUpon>HeinzightViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ViewControllers\LandingViewController.cs" />
+    <Compile Include="ViewControllers\LandingViewController.designer.cs">
+      <DependentUpon>LandingViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\LandingViewController.xib" />
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="ViewControllers\" />
+  </ItemGroup>
 </Project>
