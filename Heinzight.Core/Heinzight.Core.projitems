@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Exhibit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data Access\LocationDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Beacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Access\DisplayDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />
