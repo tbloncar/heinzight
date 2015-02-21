@@ -3,7 +3,6 @@ using System.Linq;
 
 using Autofac;
 
-using SQLite;
 using SQLiteNetExtensions.Extensions;
 
 using Heinzight.Core;

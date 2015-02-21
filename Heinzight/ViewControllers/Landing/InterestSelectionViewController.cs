@@ -4,7 +4,6 @@ using System.Linq;
 using System.Drawing;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 using Heinzight.Core;
@@ -82,6 +81,12 @@ namespace Heinzight
 			}
 
 			startTourButton.Hidden = userSelectedInterests.Count == 0;
+		}
+
+		void Submit()
+		{
+			// TODO: Save interests
+			PresentViewController (null, true, null);
 		}
 	}
 }

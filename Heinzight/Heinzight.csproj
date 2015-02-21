@@ -106,7 +106,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-	</Reference>
+    </Reference>
     <Reference Include="System.Device.Portable">
       <HintPath>..\packages\System.Device.Location.Portable.1.0.0\lib\System.Device.Portable.dll</HintPath>
     </Reference>
@@ -114,6 +114,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\person.png" />
+    <BundleResource Include="Resources\age-bg.png" />
+    <BundleResource Include="Resources\garden-bg.png" />
+    <BundleResource Include="Resources\garden-logo.png" />
+    <BundleResource Include="Resources\heinz-bg.png" />
+    <BundleResource Include="Resources\heinz-logo.png" />
+    <BundleResource Include="Resources\interest-bg.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -148,5 +154,6 @@
   <ItemGroup>
     <Folder Include="ViewControllers\" />
     <Folder Include="ViewControllers\Landing\" />
+    <Folder Include="ViewControllers\New Folder\" />
   </ItemGroup>
 </Project>
