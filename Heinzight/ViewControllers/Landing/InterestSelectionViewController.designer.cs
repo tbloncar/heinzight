@@ -15,14 +15,19 @@ namespace Heinzight
 		[Outlet]
 		MonoTouch.UIKit.UIScrollView interestsScrollView { get; set; }
 
-		[Action ("continueButton:")]
-		partial void continueButton (MonoTouch.Foundation.NSObject sender);
+		[Outlet]
+		MonoTouch.UIKit.UIButton startTourButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (interestsScrollView != null) {
 				interestsScrollView.Dispose ();
 				interestsScrollView = null;
+			}
+
+			if (startTourButton != null) {
+				startTourButton.Dispose ();
+				startTourButton = null;
 			}
 		}
 	}
