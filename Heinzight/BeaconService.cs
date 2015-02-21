@@ -11,15 +11,25 @@ namespace Heinzight
 {
 	public class BeaconService
 	{
-		static readonly string uuid = "11111111-2222-3333-4444-555555555555";
-		static readonly string beaconId = "1";
-
-		public BeaconService ()
+		public static string BeaconUUID = "11111111-2222-3333-4444-555555555555";
+	
+		public static void StartService ()
 		{
-			var beaconUUID = new NSUuid (uuid);
-			var beaconRegion = new CLBeaconRegion (beaconUUID, beaconId);
-			//power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
-			var power = new NSNumber (-59);
+			var beaconUUID = new NSUuid (BeaconUUID);
+
+			var locationMgr = new CLLocationManager ();
+			var beaconRegion = new CLBeaconRegion(beaconUUID, "Heinzight");
+
+			beaconRegion.NotifyEntryStateOnDisplay = true;
+			beaconRegion.NotifyOnEntry = true;
+			beaconRegion.NotifyOnExit = true;
+
+			locationMgr.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => {
+				System.Console.WriteLine (e);
+			};
+
+			locationMgr.StartMonitoring (beaconRegion);
+			locationMgr.StartRangingBeacons (beaconRegion);
 		}
 	}
 }

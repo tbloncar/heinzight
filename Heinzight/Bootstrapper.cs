@@ -34,6 +34,8 @@ namespace Heinzight
 					Console.WriteLine (di.Interest.Name + " " + di.Display.Name);
 				} 
 			}
+
+			Heinzight.BeaconService.StartService();
 		}
 	}
 }

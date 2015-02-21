@@ -143,6 +143,7 @@
     <Compile Include="ViewControllers\Landing\InterestSelectionViewController.designer.cs">
       <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeaconService.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
