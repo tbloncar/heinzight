@@ -40,7 +40,7 @@ namespace Heinzight.Core
 			[ManyToOne]
 			public Exhibit Exhibit { get; set; }
 
-			[ManyToMany(typeof(ExhibitInterest))]
+			[ManyToMany(typeof(DisplayInterest))]
 			public List<Interest> Interests { get; set; }
 		}
 	}

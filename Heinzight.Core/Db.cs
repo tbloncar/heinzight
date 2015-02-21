@@ -12,15 +12,14 @@ namespace Heinzight.Core
 
 		private Db() {}
 
-		public string Name = "heinzight";
-		public string FilePath = Path.Combine(Environment.GetFolderPath (Environment.SpecialFolder.Personal), Name);
+		public string FilePath = Path.Combine(Environment.GetFolderPath (Environment.SpecialFolder.Personal), "heinzight");
 
 		public static Db GetInstance
 		{
 			get
 			{
 				if(instance == null) {
-					instance = new DbInfo();
+					instance = new Db ();
 				}
 
 				return instance;
@@ -42,8 +41,9 @@ namespace Heinzight.Core
 			using (var conn = GetConnection ()) {
 				conn.CreateTable<Location> ();
 				conn.CreateTable<Exhibit> ();
+				conn.CreateTable<Display> ();
 				conn.CreateTable<Interest> ();
-				conn.CreateTable<ExhibitInterest> ();
+				conn.CreateTable<DisplayInterest> ();
 			}
 		}
 
@@ -64,30 +64,30 @@ namespace Heinzight.Core
 					Name = "Ferris Wheel",
 					AdultContent = "<h1>Ferris Wheel</h1>",
 					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = "1",
-					BeaconMinorNum = "1"
+					BeaconMajorNum = 1,
+					BeaconMinorNum = 1
 				},
 				new Display {
 					Name = "Elektro and Sparko",
 					AdultContent = "<h1>Elektro and Sparko</h1>",
 					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = "1",
-					BeaconMinorNum = "2"
+					BeaconMajorNum = 1,
+					BeaconMinorNum = 2
 				},
 				new Display {
 					Name = "Log Cabin",
 					AdultContent = "<h1>Log Cabin</h1>",
 					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = "1",
-					BeaconMinorNum = "3"
+					BeaconMajorNum = 1,
+					BeaconMinorNum = 3
 				}
 			};
 				
 			var location = new Location
 			{
 				Name = "Senator John Heinz History Center",
-				Latitude = 40.4463499,
-				Longitude = -79.9925008,
+				Latitude = 40.4463499m,
+				Longitude = -79.9925008m,
 				Displays = displays,
 				Interests = interests
 			};
