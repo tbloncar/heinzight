@@ -8,6 +8,9 @@ using MonoTouch.UIKit;
 using Heinzight.Core;
 using Heinzight.Core.ORM;
 using Heinzight.Core.DAO;
+using MonoTouch.Foundation;
+using MonoTouch.CoreLocation;
+
 
 namespace Heinzight
 {
@@ -36,6 +39,9 @@ namespace Heinzight
 				interestsScrollView.Add (interestButton);
 				lastY += interestButton.Frame.Height + PADDING_HEIGHT;
 			}
+
+			var bs = new BeaconService ();
+			bs.StartService ();
 		}
 
 		UIView CreateInterestButton(Interest interest, float lastY)
