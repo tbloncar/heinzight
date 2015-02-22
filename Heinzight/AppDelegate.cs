@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
@@ -14,7 +15,7 @@ namespace Heinzight
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-		
+		private UIWindow _window;
 		public override UIWindow Window {
 			get;
 			set;
@@ -24,9 +25,21 @@ namespace Heinzight
 		{
 			Bootstrapper.Initialize ();
 
-			var window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.RootViewController = new LandingNavigationController ();;
-			window.MakeKeyAndVisible ();
+			if (_window == null)
+				_window = new UIWindow (UIScreen.MainScreen.Bounds);
+			_window.RootViewController = new LandingNavigationController ();
+			_window.MakeKeyAndVisible ();
+		}
+
+		public override bool WillFinishLaunching (UIApplication application, NSDictionary launchOptions)
+		{
+			if (_window == null)
+				_window = new UIWindow (UIScreen.MainScreen.Bounds);
+//			RectangleF bounds = UIScreen.MainScreen.Bounds;
+			_window.Frame = UIScreen.MainScreen.Bounds;
+			_window.Bounds = UIScreen.MainScreen.Bounds;
+
+			return true;
 		}
 		
 		// This method is invoked when the application is about to move from active to inactive state.

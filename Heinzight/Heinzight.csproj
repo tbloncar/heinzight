@@ -89,9 +89,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Data" />
@@ -143,7 +140,7 @@
     <Compile Include="ViewControllers\Landing\InterestSelectionViewController.designer.cs">
       <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeaconService.cs" />
+    <Compile Include="Services\BeaconService.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
@@ -155,6 +152,6 @@
   <ItemGroup>
     <Folder Include="ViewControllers\" />
     <Folder Include="ViewControllers\Landing\" />
-    <Folder Include="ViewControllers\New Folder\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

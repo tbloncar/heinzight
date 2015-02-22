@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Linq;
 using System.Drawing;
 using System.Collections.Generic;
@@ -9,8 +8,9 @@ using MonoTouch.UIKit;
 using Heinzight.Core;
 using Heinzight.Core.ORM;
 using Heinzight.Core.DAO;
+using MonoTouch.Foundation;
+using MonoTouch.CoreLocation;
 
-//using SQLite.Net;
 
 namespace Heinzight
 {
@@ -30,11 +30,7 @@ namespace Heinzight
 			startTourButton.Hidden = true;
 			startTourButton.TouchUpInside += (sender, e) => Submit();
 
-			List<Interest> interests;
-			using (var conn = Db.Instance.GetConnection ()) 
-			{
-				interests = conn.Table<Interest> ().ToList();
-			}
+			var interests = InterestDAO.GetInterestsForLocation (CurrentUser.Instance.Location);
 
 			var lastY = 0f;
 			foreach (var interest in interests) 
@@ -43,6 +39,9 @@ namespace Heinzight
 				interestsScrollView.Add (interestButton);
 				lastY += interestButton.Frame.Height + PADDING_HEIGHT;
 			}
+
+			var bs = new BeaconService ();
+			bs.StartService ();
 		}
 
 		UIView CreateInterestButton(Interest interest, float lastY)

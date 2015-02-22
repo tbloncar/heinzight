@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 
-using Autofac;
-
 using SQLiteNetExtensions.Extensions;
 
 using Heinzight.Core;
@@ -12,14 +10,8 @@ namespace Heinzight
 {
 	public class Bootstrapper
 	{
-		public static IContainer Container;
-
 		public static void Initialize()
 		{
-			var builder = new ContainerBuilder ();
-
-			ServiceManager.Initialize (builder.Build ());
-
 			var db = Db.Instance;
 
 			// Setup and seed the database
@@ -34,8 +26,6 @@ namespace Heinzight
 					Console.WriteLine (di.Interest.Name + " " + di.Display.Name);
 				} 
 			}
-
-			Heinzight.BeaconService.StartService();
 		}
 	}
 }

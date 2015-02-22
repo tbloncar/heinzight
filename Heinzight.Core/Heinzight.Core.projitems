@@ -9,7 +9,6 @@
     <Import_RootNamespace>Heinzight.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Interest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CurrentUser.cs" />
@@ -20,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data Access\LocationDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Beacon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data Access\DisplayDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Access\InterestDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />
