@@ -16,7 +16,7 @@ namespace Heinzight.Core
 			[PrimaryKey, AutoIncrement]
 			public int ID { get; set; }
 			public string Name { get; set; }
-			public string FeaturedImagePath { get; set; }
+			public string ImageUrl { get; set; }
 
 			[ForeignKey(typeof(Location))]
 			public int LocationId { get; set; }

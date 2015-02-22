@@ -107,6 +107,9 @@
     <Reference Include="System.Device.Portable">
       <HintPath>..\packages\System.Device.Location.Portable.1.0.0\lib\System.Device.Portable.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\..\..\..\Downloads\restsharp-105.0.1.0\lib\ios\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -159,6 +162,10 @@
       <DependentUpon>MainScreenTableController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\Tour\DisplayView.cs" />
+    <Compile Include="ViewControllers\Tour\MenuViewController.cs" />
+    <Compile Include="ViewControllers\Tour\MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
@@ -167,6 +174,7 @@
     <InterfaceDefinition Include="ViewControllers\Tour\DetailsViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Tour\MapViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Tour\MainScreenTableController.xib" />
+    <InterfaceDefinition Include="ViewControllers\Tour\MenuViewController.xib" />
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

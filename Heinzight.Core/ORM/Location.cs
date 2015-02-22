@@ -16,7 +16,7 @@ namespace Heinzight.Core
 			[PrimaryKey, AutoIncrement]
 			public int ID { get; set; }
 			public string Name { get; set; }
-			public string LogoPath { get; set; }
+			public string LogoUrl { get; set; }
 			public decimal Latitude { get; set; }
 			public decimal Longitude { get; set; }
 

@@ -16,9 +16,9 @@ namespace Heinzight.Core
 			[PrimaryKey, AutoIncrement]
 			public int ID { get; set; }
 			public string Name { get; set; }
-			public string FeaturedImagePath { get; set; }
-			public string ChildContent { get; set; }
-			public string AdultContent { get; set; }
+			public string ImageUrl { get; set; }
+			public string ChildContentHTML { get; set; }
+			public string AdultContentHTML { get; set; }
 
 			[Indexed]
 			public string BeaconUUID { get; set; }

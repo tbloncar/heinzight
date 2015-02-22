@@ -23,8 +23,8 @@ namespace Heinzight
 				Longitude = -79.9925008
 			});
 
-			mainLogoImageView.Image = UIImage.FromFile (nearbyLocations [0].LogoPath);
-			secondaryLogoImageView.Image = UIImage.FromFile (nearbyLocations [1].LogoPath);
+			mainLogoImageView.Image = UIImage.FromFile ("heinz-logo.png");
+			secondaryLogoImageView.Image = UIImage.FromFile ("garden-logo.png");
 
 			continueButton.Layer.BorderColor = UIColor.White.CGColor;
 			continueButton.Layer.BorderWidth = 2.0f;

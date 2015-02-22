@@ -31,10 +31,14 @@ namespace Heinzight
 			NavigationController.NavigationBarHidden = false;
 
 
-			var menuButton = new UIBarButtonItem (UIImage.FromBundle ("menu"), UIBarButtonItemStyle.Plain, null,  null);
+			var menuButton = new UIBarButtonItem (UIImage.FromBundle ("menu"), UIBarButtonItemStyle.Plain, (s, e) => {
+				ShowMenu();
+			});
 			NavigationItem.RightBarButtonItem = menuButton;
 
-			var mapButton = new UIBarButtonItem (UIImage.FromBundle ("map"), UIBarButtonItemStyle.Plain, null, null );
+			var mapButton = new UIBarButtonItem (UIImage.FromBundle ("map"), UIBarButtonItemStyle.Plain, (s, e) => {
+				ShowMap();
+			});
 			NavigationItem.LeftBarButtonItem = mapButton;
 
 			scrollView.Add(v);
@@ -56,7 +60,7 @@ namespace Heinzight
 					if (display != null)
 					{
 						IBeaconProximity myProximity = IBeaconProximity.Immediate;
-						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.FeaturedImagePath),myProximity);
+						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.ImageUrl),myProximity);
 						
 						y += dv.Frame.Height + 10f;
 
@@ -68,7 +72,7 @@ namespace Heinzight
 
 		void ShowMenu()
 		{
-			PresentViewController (new UIViewController (), true, null);
+			PresentViewController (new MenuViewController (), true, null);
 		}
 
 		void ShowMap()
