@@ -44,7 +44,7 @@ namespace Heinzight
 		}
 
 		private void OnDoubleTap (UIGestureRecognizer gesture) {
-//			PresentingViewController.DismissViewController(true, null);
+			PresentingViewController.DismissViewController(true, null);
 		}
 	}
 }
