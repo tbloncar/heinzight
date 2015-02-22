@@ -15,15 +15,15 @@ namespace Heinzight
 			var db = Db.Instance;
 
 			// Setup and seed the database
-			db.Setup ();
+			db.Create ();
 			db.Seed ();
 
 			// Log to prove we've saved somethin'
 			using (var conn = db.GetConnection ()) {
-				var displayInterests = conn.GetAllWithChildren <DisplayInterest> ().ToList();
+				var displays = conn.GetAllWithChildren <Display> ().ToList();
 
-				foreach (var di in displayInterests) {
-					Console.WriteLine (di.Interest.Name + " " + di.Display.Name);
+				foreach (var d in displays) {
+					Console.WriteLine (d.AdultContentHTML);
 				} 
 			}
 		}

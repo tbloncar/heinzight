@@ -21,11 +21,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data Access\InterestDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BeaconManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Beacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ORM\DataSyncStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebAPI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\DataSyncDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\LocationDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\ExhibitDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\DisplayDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\InterestDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\DataDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deserializers\DisplayInterestDeserializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data Access\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Deserializers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)webviews\exhibit-info.css" />

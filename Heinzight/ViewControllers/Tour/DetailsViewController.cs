@@ -19,9 +19,9 @@ namespace Heinzight
 			exhibitContent = "";
 
 			if (CurrentUser.Instance.Age == CurrentUser.AgeOptions.Child) {
-				exhibitContent = display.ChildContent;
+				exhibitContent = display.ChildContentHTML;
 			} else if (CurrentUser.Instance.Age == CurrentUser.AgeOptions.Adult) {
-				exhibitContent = display.AdultContent;
+				exhibitContent = display.AdultContentHTML;
 			}
 		}
 

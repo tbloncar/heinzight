@@ -57,7 +57,7 @@ namespace Heinzight
 					var display = displaysList.First ();
 					if (display != null)
 					{
-						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.FeaturedImagePath));
+						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.ImageUrl));
 						
 						y += dv.Frame.Height + 10f;
 
