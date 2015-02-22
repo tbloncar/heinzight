@@ -119,6 +119,8 @@
     <BundleResource Include="Resources\interest-bg.png" />
     <BundleResource Include="Resources\person-selected.png" />
     <BundleResource Include="Resources\heinz-map.png" />
+    <BundleResource Include="Resources\map.png" />
+    <BundleResource Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

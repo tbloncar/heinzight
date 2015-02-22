@@ -17,9 +17,11 @@ namespace Heinzight.Core
 				List<Display> displays;
 
 				using (var conn = Db.Instance.GetConnection ()) {
-					displays = (List<Display>)conn.Table<DisplayInterest> ()
+					displays = conn.Table<DisplayInterest> ()
 						.Where (di => interestIds.Contains (di.InterestId))
 						.Select(di => di.Display).Distinct().ToList();
+
+					Console.WriteLine ("1");
 				}
 
 				return displays;
