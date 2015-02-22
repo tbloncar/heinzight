@@ -33,7 +33,7 @@ namespace Heinzight.Core
 		public SQLiteConnection GetConnection() {
 			#if __IOS__
 			return new SQLiteConnection (new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(), FilePath);
-			#elif
+			#elif __ANDROID__
 			return new SQLiteConnection (new SQLite.Net.Platform.Xamarin
 			#endif
 		}
