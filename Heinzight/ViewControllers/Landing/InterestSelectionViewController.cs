@@ -55,10 +55,10 @@ namespace Heinzight
 				40
 			));
 
-			interestButton.Layer.BorderColor = UIColor.LightGray.CGColor;
+			interestButton.Layer.BorderColor = UIColor.White.CGColor;
 			interestButton.Layer.BorderWidth = 2.0f;
 			interestButton.Layer.CornerRadius = 20;
-			interestButton.SetTitleColor(UIColor.LightGray, UIControlState.Normal);
+			interestButton.SetTitleColor(UIColor.White, UIControlState.Normal);
 			interestButton.SetTitle (interest.Name, UIControlState.Normal);
 			interestButton.TouchUpInside += (sender, e) => InterestButtonToggle (interest, interestButton);
 			return interestButton;
@@ -69,16 +69,16 @@ namespace Heinzight
 			if (userSelectedInterests.Contains (interest)) 
 			{
 				userSelectedInterests.Remove (interest);
-				button.SetTitleColor (UIColor.LightGray, UIControlState.Normal);
-				button.BackgroundColor = UIColor.White;
-				button.Layer.BorderColor = UIColor.LightGray.CGColor;
+				button.SetTitleColor (UIColor.White, UIControlState.Normal);
+				button.BackgroundColor = UIColor.FromWhiteAlpha(1,0);
+				button.Layer.BorderColor = UIColor.White.CGColor;
 			} 
 			else 
 			{
 				userSelectedInterests.Add (interest);
-				button.SetTitleColor (UIColor.White, UIControlState.Normal);
-				button.BackgroundColor = UIColor.DarkGray;
-				button.Layer.BorderColor = UIColor.DarkGray.CGColor;
+				button.SetTitleColor (UIColor.FromRGB(183,18,52), UIControlState.Normal);
+				button.BackgroundColor = UIColor.White;
+				button.Layer.BorderColor = UIColor.White.CGColor;
 			}
 
 			startTourButton.Hidden = userSelectedInterests.Count == 0;
