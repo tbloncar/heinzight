@@ -31,12 +31,10 @@ namespace Heinzight
 
 			continueButton.TouchUpInside += (sender, e) => {
 				// Assign the nearest location to the current user
-				CurrentUser.Instance.Location = nearbyLocations[0];
+				CurrentUser.Instance.Location = nearbyLocations [0];
 
-				NavigationController.PushViewController(new AgeSelectionViewController(), true);
+				NavigationController.PushViewController (new AgeSelectionViewController (), true);
 			};
-
-			// Perform any additional setup after loading the view, typically from a nib.
 		}
 	}
 }
