@@ -39,10 +39,6 @@ namespace Heinzight
 			});
 			NavigationItem.LeftBarButtonItem = mapButton;
 
-//			var menuButton = new UIBarButtonItem ("menu", UIBarButtonItemStyle.Plain, (s, e) => {
-//				ShowMenu();
-//			});
-
 			scrollView.Add(v);
 
 			var bs = new BeaconService ();

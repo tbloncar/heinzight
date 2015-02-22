@@ -17,17 +17,19 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
-			var navCtrl = new UINavigationController ();
-			var nav = new UINavigationBar ();
-			nav.BarTintColor = UIColor.FromRGB (167, 49, 63);
-			navCtrl.Title = "";
-			navCtrl.NavigationBar.BarStyle = UIBarStyle.BlackOpaque;
+			UITapGestureRecognizer doubletap =  new UITapGestureRecognizer(OnDoubleTap) {
+				NumberOfTapsRequired = 2 // double tap
+			};
 
 			var table = new UITableView(new RectangleF(0,50, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)); 
 			string[] configItems = new string[] {"Edit User Information", "Become a Member"};
 			table.Source = new TableSource(configItems);
+			table.AddGestureRecognizer (doubletap);
 			Add (table);
-			System.Console.WriteLine (navCtrl);
+
+
+
+
 		}
 
 		public class TableSource : UITableViewSource {
@@ -50,6 +52,10 @@ namespace Heinzight
 				cell.TextLabel.Text = tableItems[indexPath.Row];
 				return cell;
 			}
+		}
+
+		private void OnDoubleTap (UIGestureRecognizer gesture) {
+			PresentingViewController.DismissViewController(true, null);
 		}
 	}
 }
