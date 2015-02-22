@@ -29,18 +29,11 @@
                     <rect key="frame" x="40" y="81" width="240" height="424"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB6-hD-MU2">
-<<<<<<< Updated upstream
-                    <rect key="frame" x="0.0" y="522" width="320" height="54"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Start Tour">
-                        <color key="titleColor" red="0.71764705882352942" green="0.070588235294117646" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
                     <rect key="frame" x="0.0" y="514" width="320" height="54"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                     <state key="normal" title="Start Tour">
                         <color key="titleColor" red="0.71764705882352942" green="0.047058823529411764" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> Stashed changes
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
