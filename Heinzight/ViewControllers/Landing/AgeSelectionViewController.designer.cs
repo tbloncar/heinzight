@@ -22,9 +22,6 @@ namespace Heinzight
 		MonoTouch.UIKit.UIView adultInnerView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIView adultView { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UIView adultViewButton { get; set; }
 
 		[Outlet]
@@ -46,9 +43,6 @@ namespace Heinzight
 		MonoTouch.UIKit.UIView littleKidInnerView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIView littleKidView { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UIView littleKidViewButton { get; set; }
 
 		[Outlet]
@@ -56,29 +50,9 @@ namespace Heinzight
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (adultView != null) {
-				adultView.Dispose ();
-				adultView = null;
-			}
-
 			if (adultViewButton != null) {
 				adultViewButton.Dispose ();
 				adultViewButton = null;
-			}
-
-			if (adultIconView != null) {
-				adultIconView.Dispose ();
-				adultIconView = null;
-			}
-
-			if (littleKidIconView != null) {
-				littleKidIconView.Dispose ();
-				littleKidIconView = null;
-			}
-
-			if (backgroundImageView != null) {
-				backgroundImageView.Dispose ();
-				backgroundImageView = null;
 			}
 
 			if (continueButton != null) {
@@ -91,21 +65,6 @@ namespace Heinzight
 				introTextLabel = null;
 			}
 
-			if (littleKidContainerView != null) {
-				littleKidContainerView.Dispose ();
-				littleKidContainerView = null;
-			}
-
-			if (adultContainerView != null) {
-				adultContainerView.Dispose ();
-				adultContainerView = null;
-			}
-
-			if (littleKidView != null) {
-				littleKidView.Dispose ();
-				littleKidView = null;
-			}
-
 			if (littleKidViewButton != null) {
 				littleKidViewButton.Dispose ();
 				littleKidViewButton = null;
@@ -116,9 +75,34 @@ namespace Heinzight
 				questionLabel = null;
 			}
 
+			if (adultContainerView != null) {
+				adultContainerView.Dispose ();
+				adultContainerView = null;
+			}
+
+			if (adultIconView != null) {
+				adultIconView.Dispose ();
+				adultIconView = null;
+			}
+
 			if (adultInnerView != null) {
 				adultInnerView.Dispose ();
 				adultInnerView = null;
+			}
+
+			if (backgroundImageView != null) {
+				backgroundImageView.Dispose ();
+				backgroundImageView = null;
+			}
+
+			if (littleKidContainerView != null) {
+				littleKidContainerView.Dispose ();
+				littleKidContainerView = null;
+			}
+
+			if (littleKidIconView != null) {
+				littleKidIconView.Dispose ();
+				littleKidIconView = null;
 			}
 
 			if (littleKidInnerView != null) {
