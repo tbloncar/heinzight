@@ -27,4 +27,12 @@
     <Folder Include="$(MSBuildThisFileDirectory)Data Access\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)webviews\exhibit-info.css" />
+    <None Include="$(MSBuildThisFileDirectory)webviews\exhibit-info.html" />
+    <None Include="$(MSBuildThisFileDirectory)webviews\exhibit-info.js" />
+    <None Include="$(MSBuildThisFileDirectory)webviews\assets\chevron-down.png" />
+    <None Include="$(MSBuildThisFileDirectory)webviews\assets\chevron-right.png" />
+    <None Include="$(MSBuildThisFileDirectory)webviews\assets\close-button.png" />
+  </ItemGroup>
 </Project>

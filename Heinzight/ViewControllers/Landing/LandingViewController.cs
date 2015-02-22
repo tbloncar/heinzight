@@ -1,9 +1,6 @@
-﻿
-using System;
-using System.Drawing;
+﻿using System;
 using System.Device.Location;
 
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 using Heinzight.Core;
