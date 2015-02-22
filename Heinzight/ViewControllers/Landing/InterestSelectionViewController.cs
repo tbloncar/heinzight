@@ -91,7 +91,6 @@ namespace Heinzight
 		{
 			// Set displays (cached for app lifecycle) based on user's selected interests
 			CurrentUser.Instance.Displays = DisplayDAO.GetDisplaysForInterests (userSelectedInterests);
-
 			NavigationController.PushViewController(new MainScreenTableController(),true);
 		}
 	}

@@ -24,7 +24,9 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
-			var v = new DisplayView (10f, "Title", "Header", UIImage.FromBundle("garden-logo"));
+			IBeaconProximity proximity = IBeaconProximity.Immediate;
+
+			var v = new DisplayView (10f, "Andrew Carnegie", "Pittsburgh: A Tradition of Innovation", UIImage.FromBundle("garden-logo"), proximity);
 
 			NavigationController.NavigationBarHidden = false;
 
@@ -53,7 +55,8 @@ namespace Heinzight
 					var display = displaysList.First ();
 					if (display != null)
 					{
-						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.FeaturedImagePath));
+						IBeaconProximity myProximity = IBeaconProximity.Immediate;
+						var dv = new DisplayView (y, display.Name, display.Exhibit.Name, UIImage.FromBundle(display.FeaturedImagePath),myProximity);
 						
 						y += dv.Frame.Height + 10f;
 
