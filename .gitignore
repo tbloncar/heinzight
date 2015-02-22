@@ -2,3 +2,4 @@
 */obj/*
 *.exe
 *.mdb
+*.DS_Store
