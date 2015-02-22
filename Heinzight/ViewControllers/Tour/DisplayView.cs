@@ -20,10 +20,10 @@ namespace Heinzight
 
 		public DisplayView (float y, string title, string header, UIImage image, IBeaconProximity proximity)
 		{
-			Frame = new RectangleF (5, y, 300, 400);
+			Frame = new RectangleF (4, y, 300, 400);
 			BackgroundColor = UIColor.White;
 
-			titleFrame = new UILabel (new RectangleF (0, 50, Frame.Width, 30));
+			titleFrame = new UILabel (new RectangleF (0, 35, Frame.Width, 30));
 			titleFrame.Text = title;
 			titleFrame.Font = UIFont.FromName ("Avenir Next", 16);
 			titleFrame.TextAlignment = UITextAlignment.Center;
@@ -36,23 +36,31 @@ namespace Heinzight
 			headerFrame.TextAlignment = UITextAlignment.Center;
 			
 			
-			imageView = new UIImageView (new RectangleF (0, 100, Frame.Width, Frame.Width));
+			imageView = new UIImageView (new RectangleF (15, 70, Frame.Width-30, Frame.Width-30));
 			imageView.Image = image;
 
-			proximityContainer = new UIView (new RectangleF (75, 150 + Frame.Width, 400, 30));
+			proximityContainer = new UIView (new RectangleF (20, Frame.Width, 400, 30));
 
-			proximityView = new UIImageView (new RectangleF (0, 100 + Frame.Width, Frame.Width, 50));
-			proximityView.Image = new UIImage("interest-bg.png");
-
+			proximityView = new UIImageView (new RectangleF (2, Frame.Width + 42, Frame.Width - 5, 55));
 			proximityLabel = new UILabel();
-			proximityLabel.Text = "Your distance is:";
 			proximityLabel.Font = UIFont.FromName ("Avenir Next", 14);
 
+			if (proximity == IBeaconProximity.Far) {
+				proximityView.Image = UIImage.FromBundle ("meter-far.png");
+				proximityLabel.Text = "FAR";
+			}else if (proximity == IBeaconProximity.Near) {
+				proximityView.Image = UIImage.FromBundle ("meter-close.png");
+				proximityLabel.Text = "NEAR";
+			}else if (proximity == IBeaconProximity.Immediate) {
+				proximityView.Image = UIImage.FromBundle ("meter-immediate.png");
+				proximityLabel.Text = "IMMEDIATE";
+			}
+
 			preProximityLabel = new UILabel();
-			preProximityLabel.Text = "Immediate";
+			preProximityLabel.Text = "Your distance is:";
 			preProximityLabel.Font = UIFont.FromName ("Avenir Next", 14);
 
-			proximityView.AddSubviews (preProximityLabel,proximityLabel);
+			proximityContainer.AddSubviews (preProximityLabel,proximityLabel);
 
 			AddSubviews (titleFrame, headerFrame, imageView, proximityContainer, proximityView);
 			

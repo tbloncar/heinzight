@@ -121,6 +121,10 @@
     <BundleResource Include="Resources\heinz-map.png" />
     <BundleResource Include="Resources\map.png" />
     <BundleResource Include="Resources\menu.png" />
+    <BundleResource Include="Resources\meter-close.png" />
+    <BundleResource Include="Resources\meter-far.png" />
+    <BundleResource Include="Resources\meter-immediate.png" />
+    <BundleResource Include="Resources\andrewcarnegie.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

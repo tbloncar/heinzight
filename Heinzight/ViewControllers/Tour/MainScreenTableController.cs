@@ -24,9 +24,9 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
-			IBeaconProximity proximity = IBeaconProximity.Immediate;
+			IBeaconProximity proximity = IBeaconProximity.Near;
 
-			var v = new DisplayView (10f, "Andrew Carnegie", "Pittsburgh: A Tradition of Innovation", UIImage.FromBundle("garden-logo"), proximity);
+			var v = new DisplayView (10f, "Andrew Carnegie", "Pittsburgh: A Tradition of Innovation", UIImage.FromBundle("andrewcarnegie.png"), proximity);
 
 			NavigationController.NavigationBarHidden = false;
 
