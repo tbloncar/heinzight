@@ -1,10 +1,11 @@
 ﻿using System;
-using SQLite;
+using SQLite.Net;
+using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
 
 namespace Heinzight.Core
 {
-	namespace Orm
+	namespace ORM
 	{
 		// <summary>
 		// Represents an association between a Display and

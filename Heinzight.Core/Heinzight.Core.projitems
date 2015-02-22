@@ -10,15 +10,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ServiceManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Interest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CurrentUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Db.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Display.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\DisplayInterest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ORM\Exhibit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Access\LocationDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Beacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data Access\DisplayDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ORM\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Data Access\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>

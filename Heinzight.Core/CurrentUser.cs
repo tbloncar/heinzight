@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Autofac;
 
+using Heinzight.Core.ORM;
+
 namespace Heinzight.Core
 {
 	public class CurrentUser
@@ -23,6 +25,7 @@ namespace Heinzight.Core
 		}
 		private CurrentUser() {}
 		public AgeOptions Age { get ; set; }
-		public List<string> Interests { get; set; }
+		public List<Display> Displays { get; set; }
+		public Location Location { get; set; }
 	}
 }

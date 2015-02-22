@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using SQLite;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Extensions;
 using SQLiteNetExtensions.Attributes;
 
 namespace Heinzight.Core
 {
-	namespace Orm
+	namespace ORM
 	{
 		// <summary>
 		// Represents a display (e.g., "Ferris Wheel")
@@ -40,7 +41,7 @@ namespace Heinzight.Core
 			[ManyToOne]
 			public Exhibit Exhibit { get; set; }
 
-			[ManyToMany(typeof(ExhibitInterest))]
+			[ManyToMany(typeof(DisplayInterest))]
 			public List<Interest> Interests { get; set; }
 		}
 	}
