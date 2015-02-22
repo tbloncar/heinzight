@@ -22,7 +22,7 @@ namespace Heinzight
 
 			scrollView = new UIScrollView (
 				new RectangleF (0, 0, View.Frame.Width,
-					View.Frame.Height - NavigationController.NavigationBar.Frame.Height));
+					View.Frame.Height));
 			View.AddSubview (scrollView);
 
 			imageView = new UIImageView (UIImage.FromBundle ("heinz-map.png"));
@@ -44,10 +44,7 @@ namespace Heinzight
 		}
 
 		private void OnDoubleTap (UIGestureRecognizer gesture) {
-			if (scrollView.ZoomScale >= 1)
-				scrollView.SetZoomScale(0.4f, true);
-			else
-				scrollView.SetZoomScale(1f, true);
+//			PresentingViewController.DismissViewController(true, null);
 		}
 	}
 }

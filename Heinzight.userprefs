@@ -1,33 +1,27 @@
 ﻿<Properties StartupItem="Heinzight/Heinzight.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5.8.1" />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Cameron Ray’s iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight/ViewControllers/Tour/MainScreenTableController.cs">
+    <Files>
+      <File FileName="Heinzight/ViewControllers/Landing/InterestSelectionViewController.cs" Line="74" Column="74" />
+      <File FileName="Heinzight/ViewControllers/Tour/MainScreenTableController.cs" Line="3" Column="3" />
+      <File FileName="Heinzight/ViewControllers/Tour/DisplayView.cs" Line="54" Column="54" />
+      <File FileName="Heinzight.Core/BeaconManager.cs" Line="1" Column="1" />
+      <File FileName="Heinzight/Main.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Heinzight" expanded="True">
-            <Node name="ViewControllers" expanded="True">
-              <Node name="Landing" expanded="True">
-                <Node name="LandingNavigationController.cs" selected="True" />
-              </Node>
-              <Node name="Tour" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="Heinzight" selected="True" />
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>adultContainerView</Value>
+          <Value>userDisplays</Value>
+          <Value>beaconList</Value>
+          <Value>displaysList</Value>
         </State>
       </Pad>
     </Pads>
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight/ViewControllers/Landing/LandingViewController.cs">
-    <Files>
-      <File FileName="Heinzight/ViewControllers/Landing/LandingViewController.cs" Line="1" Column="1" />
-      <File FileName="Heinzight/Main.cs" Line="15" Column="15" />
-    </Files>
->>>>>>> Stashed changes
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

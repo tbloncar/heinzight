@@ -28,10 +28,12 @@ namespace Heinzight
 
 			NavigationController.NavigationBarHidden = false;
 
-			var menuButton = new UIBarButtonItem ("menu", UIBarButtonItemStyle.Plain, (s, e) => {
-				ShowMenu();
-			});
+			var menuButton = new UIBarButtonItem ("menu", UIBarButtonItemStyle.Plain, (s, e) => ShowMenu ());
 			NavigationItem.RightBarButtonItem = menuButton;
+
+			var mapButton = new UIBarButtonItem ("map", UIBarButtonItemStyle.Plain, (s, e) => ShowMap ());
+			NavigationItem.LeftBarButtonItem = mapButton;
+
 
 
 			scrollView.Add(v);
@@ -65,6 +67,11 @@ namespace Heinzight
 		void ShowMenu()
 		{
 			PresentViewController (new UIViewController (), true, null);
+		}
+
+		void ShowMap()
+		{
+			PresentViewController (new MapViewController (), true, null);
 		}
 	}
 }
