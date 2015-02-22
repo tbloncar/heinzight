@@ -3,10 +3,9 @@ body{
 	margin:0px;
 }
 
-h1.exhibit-title{
-	padding:10px;
-	text-align:center;
-	text-transform:uppercase;
+img.exhibit-img{
+	width:100%;
+	height:auto;
 }
 
 ul.main-ul{
@@ -15,15 +14,6 @@ ul.main-ul{
 
 li.main-bullet{
 	list-style-type:none;
-}
-
-li.main-bullet ul{
-	list-style-type:disc;
-	font-size:30px;
-	overflow-y:hidden;
-	-webkit-transition: max-height 0.01s ease;
-	transition: max-height 0.01s ease;
-	max-height:0;
 }
 
 div.topic-header{  
@@ -39,36 +29,12 @@ div.topic-header h3{
 	vertical-align:top;
 }
 
-ul.topic-bullets{
-	color:#B71234;
-}
-
-ul.topic-bullets p{
-	color:#000000;
-	font-size:16px;
-}
-
+/* Chevron CSS */
 span.chevron{
 	margin-right:10px;
 	display:inline;
 	height:22px;
 	width:22px;
-}
-
-li.main-bullet span.chevron span.chevron-down,
-li.main-bullet.active span.chevron span.chevron-right{
-	display:inline-block;
-}
-
-li.main-bullet span.chevron span.chevron-right,
-li.main-bullet.active span.chevron span.chevron-down{
-	display:none;
-}
-
-li.main-bullet.active ul{
-	max-height:1000px;
-	-webkit-transition:max-height 0.5s ease;
-	transition:max-height 0.5s ease;
 }
 
 span.chevron-right{
@@ -83,6 +49,38 @@ span.chevron-down{
 	width:22px;
 }
 
-span.close-button{
-	background:url('assets/close-button.png') no-repeat;
+li.main-bullet span.chevron span.chevron-down,
+li.main-bullet.active span.chevron span.chevron-right{
+	display:none;
+}
+
+li.main-bullet span.chevron span.chevron-right,
+li.main-bullet.active span.chevron span.chevron-down{
+	display:inline-block;
+}
+
+/* CSS for the main content list transitions */
+li.main-bullet div.topic-content{
+	overflow-y:hidden;
+	-webkit-transition: max-height 0.01s ease;
+	transition: max-height 0.1s ease;
+	max-height:0;
+}
+
+li.main-bullet.active div.topic-content{
+	max-height:1000px;
+	-webkit-transition:max-height 0.5s ease;
+	transition:max-height 0.5s ease;
+}
+
+/* Dummy content CSS */
+li.main-bullet ul.topic-bullets{
+	list-style-type:disc;
+	font-size:30px;
+	color:#B71234;
+}
+
+ul.topic-bullets p{
+	color:#000000;
+	font-size:16px;
 }
