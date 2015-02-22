@@ -28,7 +28,8 @@ namespace Heinzight.Core
 
 		public void UpdateBeacons(List<Beacon> beacons)
 		{
-			BeaconsUpdated(beacons);
+			if (BeaconsUpdated != null)
+				BeaconsUpdated(beacons);
 		}
 	}
 }

@@ -8,8 +8,8 @@ using MonoTouch.Foundation;
 
 namespace Heinzight
 {
-	[Register ("MainTourCollectionViewController")]
-	partial class MainTourCollectionViewController
+	[Register ("MapViewController")]
+	partial class MapViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{
