@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgeSelectionViewController">
             <connections>
+                <outlet property="adultContainerView" destination="JRo-Y2-LWP" id="XHP-BC-mAP"/>
+                <outlet property="adultIconView" destination="POD-4w-E1O" id="eKm-QB-x0x"/>
+                <outlet property="adultInnerView" destination="RnK-sW-uDy" id="K0w-RA-EOf"/>
                 <outlet property="adultView" destination="JRo-Y2-LWP" id="Zfl-Sn-RLI"/>
                 <outlet property="adultViewButton" destination="neI-FG-fKY" id="sFh-fw-B8t"/>
+                <outlet property="backgroundImageView" destination="E6l-up-8YW" id="H8x-ak-UtF"/>
                 <outlet property="continueButton" destination="OMh-4i-9dG" id="3iq-hX-zPp"/>
                 <outlet property="introTextLabel" destination="bAZ-cq-Gju" id="ngu-an-sUn"/>
+                <outlet property="littleKidContainerView" destination="JRo-Y2-LWP" id="gm3-SJ-GIG"/>
+                <outlet property="littleKidIconView" destination="lJS-ps-NWV" id="5Ot-rJ-wvB"/>
+                <outlet property="littleKidInnerView" destination="TeS-11-eZm" id="NG5-bF-Ogr"/>
                 <outlet property="littleKidView" destination="g0Z-5I-NA0" id="bDl-fL-Wke"/>
                 <outlet property="littleKidViewButton" destination="dyc-YB-gHa" id="LIZ-jf-abD"/>
                 <outlet property="questionLabel" destination="vmy-vy-e48" id="2kz-mt-l0c"/>
@@ -21,38 +28,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To make your experience as fun as possible we need to know a little about you" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-cq-Gju">
-                    <rect key="frame" x="29" y="46" width="439" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="age-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-up-8YW">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To make your experience as fun as possible we need to know a little about you" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-cq-Gju">
+                    <rect key="frame" x="36" y="50" width="249" height="48"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-5I-NA0">
-                    <rect key="frame" x="24" y="191" width="136" height="276"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJS-ps-NWV">
-                            <rect key="frame" x="21" y="58" width="95" height="159"/>
-                        </imageView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyc-YB-gHa">
-                            <rect key="frame" x="52" y="225" width="33" height="33"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRo-Y2-LWP">
-                    <rect key="frame" x="176" y="191" width="136" height="276"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neI-FG-fKY">
-                            <rect key="frame" x="52" y="225" width="33" height="33"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.png" translatesAutoresizingMaskIntoConstraints="NO" id="POD-4w-E1O">
-                            <rect key="frame" x="11" y="8" width="114" height="209"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How old are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmy-vy-e48">
                     <rect key="frame" x="93" y="113" width="135" height="21"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -67,12 +51,52 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-5I-NA0">
+                    <rect key="frame" x="16" y="196" width="136" height="276"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJS-ps-NWV">
+                            <rect key="frame" x="21" y="58" width="95" height="159"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyc-YB-gHa">
+                            <rect key="frame" x="52" y="225" width="33" height="33"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-11-eZm">
+                                    <rect key="frame" x="4" y="4" width="25" height="25"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRo-Y2-LWP">
+                    <rect key="frame" x="168" y="196" width="136" height="276"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neI-FG-fKY">
+                            <rect key="frame" x="46" y="225" width="33" height="33"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RnK-sW-uDy">
+                                    <rect key="frame" x="4" y="4" width="25" height="25"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.png" translatesAutoresizingMaskIntoConstraints="NO" id="POD-4w-E1O">
+                            <rect key="frame" x="0.0" y="8" width="125" height="209"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="307" y="317"/>
         </view>
     </objects>
     <resources>
-        <image name="person.png" width="794" height="1294"/>
+        <image name="age-bg.png" width="640" height="1041"/>
+        <image name="person.png" width="271" height="437"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

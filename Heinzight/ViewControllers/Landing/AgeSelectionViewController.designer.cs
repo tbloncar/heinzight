@@ -13,16 +13,37 @@ namespace Heinzight
 	partial class AgeSelectionViewController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIView adultContainerView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIImageView adultIconView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIView adultInnerView { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIView adultView { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIView adultViewButton { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView backgroundImageView { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton continueButton { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel introTextLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIView littleKidContainerView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIImageView littleKidIconView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIView littleKidInnerView { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIView littleKidView { get; set; }
@@ -45,9 +66,39 @@ namespace Heinzight
 				adultViewButton = null;
 			}
 
+			if (adultIconView != null) {
+				adultIconView.Dispose ();
+				adultIconView = null;
+			}
+
+			if (littleKidIconView != null) {
+				littleKidIconView.Dispose ();
+				littleKidIconView = null;
+			}
+
+			if (backgroundImageView != null) {
+				backgroundImageView.Dispose ();
+				backgroundImageView = null;
+			}
+
+			if (continueButton != null) {
+				continueButton.Dispose ();
+				continueButton = null;
+			}
+
 			if (introTextLabel != null) {
 				introTextLabel.Dispose ();
 				introTextLabel = null;
+			}
+
+			if (littleKidContainerView != null) {
+				littleKidContainerView.Dispose ();
+				littleKidContainerView = null;
+			}
+
+			if (adultContainerView != null) {
+				adultContainerView.Dispose ();
+				adultContainerView = null;
 			}
 
 			if (littleKidView != null) {
@@ -65,9 +116,14 @@ namespace Heinzight
 				questionLabel = null;
 			}
 
-			if (continueButton != null) {
-				continueButton.Dispose ();
-				continueButton = null;
+			if (adultInnerView != null) {
+				adultInnerView.Dispose ();
+				adultInnerView = null;
+			}
+
+			if (littleKidInnerView != null) {
+				littleKidInnerView.Dispose ();
+				littleKidInnerView = null;
 			}
 		}
 	}

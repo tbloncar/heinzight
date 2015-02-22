@@ -16,8 +16,8 @@ namespace Heinzight
 		{
 			base.ViewDidLoad ();
 
-			SetCircleButtonDisplay (littleKidViewButton);
-			SetCircleButtonDisplay (adultViewButton);
+			SetCircleButtonDisplay (littleKidViewButton, littleKidInnerView);
+			SetCircleButtonDisplay (adultViewButton, adultInnerView);
 			continueButton.Hidden = true;
 			continueButton.Layer.CornerRadius = 12;
 
@@ -27,30 +27,47 @@ namespace Heinzight
 			var childTapGesture = new UITapGestureRecognizer (SelectChild);
 			littleKidView.AddGestureRecognizer (childTapGesture);
 
+			adultContainerView.BringSubviewToFront(adultIconView);
+			littleKidContainerView.BringSubviewToFront (littleKidIconView);
+			adultContainerView.BringSubviewToFront(adultViewButton);
+			littleKidContainerView.BringSubviewToFront (littleKidViewButton);
+
+			Console.WriteLine (adultIconView.Hidden);
+			Console.WriteLine (littleKidIconView.Hidden);
+
 			continueButton.TouchUpInside += (sender, e) => NextPage();
 		}
 
-		static void SetCircleButtonDisplay(UIView v)
+		static void SetCircleButtonDisplay(UIView v, UIView iv)
 		{
 			v.Layer.CornerRadius = 17;
-			v.Layer.BorderColor = UIColor.LightGray.CGColor;
-			v.BackgroundColor = UIColor.White;
+			v.Layer.BorderColor = UIColor.White.CGColor;
+			v.BackgroundColor = UIColor.FromWhiteAlpha(1,0);
 			v.Layer.BorderWidth = 2.0f;
+
+			iv.Layer.CornerRadius = 15;
+			iv.BackgroundColor = UIColor.FromWhiteAlpha (1, 0);
 		}
 
 		void SelectChild()
 		{
 			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Child;
-			littleKidViewButton.BackgroundColor = UIColor.LightGray;
-			adultViewButton.BackgroundColor = UIColor.White;
+			littleKidInnerView.BackgroundColor = UIColor.White;
+			adultInnerView.BackgroundColor = UIColor.FromWhiteAlpha(1,0);
+
+			littleKidIconView.Image = UIImage.FromBundle("person-selected.png");
+			adultIconView.Image = UIImage.FromBundle("person.png");
 			EnableContinue ();
 		}
 
 		void SelectAdult()
 		{
 			CurrentUser.Instance.Age = CurrentUser.AgeOptions.Adult;
-			adultViewButton.BackgroundColor = UIColor.LightGray;
-			littleKidViewButton.BackgroundColor = UIColor.White;
+			adultInnerView.BackgroundColor = UIColor.White;
+			littleKidInnerView.BackgroundColor = UIColor.FromWhiteAlpha(1,0);
+
+			adultIconView.Image = UIImage.FromBundle("person-selected.png");
+			littleKidIconView.Image = UIImage.FromBundle("person.png");
 			EnableContinue ();
 		}
 
