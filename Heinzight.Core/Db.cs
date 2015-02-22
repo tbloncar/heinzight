@@ -6,7 +6,10 @@ using System.Collections.Generic;
 using SQLite.Net;
 using SQLiteNetExtensions.Extensions;
 
+using RestSharp;
+
 using Heinzight.Core.ORM;
+using Heinzight.Core.Deserializers;
 
 namespace Heinzight.Core
 {
@@ -52,6 +55,9 @@ namespace Heinzight.Core
 				conn.CreateTable<Display> ();
 				conn.CreateTable<Interest> ();
 				conn.CreateTable<DisplayInterest> ();
+				conn.CreateTable<DataSyncStatus> ();
+
+				conn.Insert (new DataSyncStatus { Version = 0 });
 			}
 		}
 
@@ -60,80 +66,96 @@ namespace Heinzight.Core
 			File.Delete(FilePath);
 		}
 
-		public void Setup()
-		{
-			Delete ();
-			Create ();
+		public void Seed() {
+			int syncVersion;
+
+			using (var conn = Db.Instance.GetConnection ()) {
+				syncVersion = conn.Table<DataSyncStatus> ().First ().Version;
+			}
+				
+			var client = new RestClient (WebAPI.Instance.BaseURL);
+			var request = new RestRequest ("data_syncs/sync", Method.GET);
+
+			request.AddParameter ("token", WebAPI.Instance.Token);
+			request.AddParameter ("version", syncVersion);
+
+			var response = client.Execute<DataSyncDeserializer> (request);
+
+			Console.WriteLine(response.Data.Version);
+			Console.WriteLine(syncVersion);
+			Console.WriteLine(response.StatusCode);
+
+			if(response.Data.Data != null && response.Data.Version > syncVersion) {
+				Sync(response.Data.Data, response.Data.Version);
+			}
 		}
 
-		public void Seed() {
-			var interests = new List<Interest> {
-				new Interest { Name = "Historical Figures" },
-				new Interest { Name = "Pop Culture" },
-				new Interest { Name = "American Life" },
-				new Interest { Name = "Music" },
-				new Interest { Name = "Exploration" },
-				new Interest { Name = "Inventions" },
-				new Interest { Name = "Food" }
-			};
+		private void Sync(DataDeserializer data, int latestVersion)
+		{
+			var exhibits = new Dictionary<int, Exhibit> ();
+			var displays = new Dictionary<int, Display> ();
+			var interests = new Dictionary<int, Interest> ();
 
-			var displays = new List<Display> {
-				new Display {
-					Name = "Ferris Wheel",
-					AdultContent = "<h1>Ferris Wheel</h1>",
-					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = 1,
-					BeaconMinorNum = 1
-				},
-				new Display {
-					Name = "Andrew Carnegie",
-					AdultContent = "<h1>Andrew Carnegie</h1>",
-					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = 1,
-					BeaconMinorNum = 2
-				},
-				new Display {
-					Name = "Nickelodeon Movie Projector, 1905",
-					AdultContent = "<h1>Nickelodeon Movie Projector, 1905</h1>",
-					BeaconUUID = "11111111-2222-3333-4444-555555555555",
-					BeaconMajorNum = 1,
-					BeaconMinorNum = 3
-				}
-			};
-				
-			var location1 = new Location {
-				Name = "Senator John Heinz History Center",
-				LogoPath = "heinz-logo.png",
-				Latitude = 40.4463499m,
-				Longitude = -79.9925008m,
-				Displays = displays,
-				Interests = interests
-			};
-
-			var location2 = new Location {
-				Name = "Pittsburgh Botanic Garden",
-				LogoPath = "garden-logo.png",
-				Latitude = 40.4267116m,
-				Longitude = -80.17704979999999m
-			};
-
-			var exhibit = new Exhibit {
-				Name = "Pittsburgh: A Tradition of Innovation",
-				Displays = displays
-			};
-
-			var displayInterests = new List<DisplayInterest> ();
-			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (0), Display = displays.ElementAt (1) });
-			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (1), Display = displays.ElementAt (2) });
-			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (2), Display = displays.ElementAt (0) });
-			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (5), Display = displays.ElementAt (0) });
-			displayInterests.Add (new DisplayInterest { Interest = interests.ElementAt (5), Display = displays.ElementAt (1) });
-					
 			using (var conn = GetConnection ()) {
-				conn.InsertWithChildren (location1, recursive: true);
-				conn.Insert (location2);
-				conn.InsertAllWithChildren (displayInterests);
-				conn.InsertWithChildren (exhibit, recursive: true);
+				conn.DropTable<Location> ();
+				conn.DropTable<Exhibit> ();
+				conn.DropTable<Display> ();
+				conn.DropTable<Interest> ();
+				conn.DropTable<DisplayInterest> ();
+
+				conn.CreateTable<Location> ();
+				conn.CreateTable<Exhibit> ();
+				conn.CreateTable<Display> ();
+				conn.CreateTable<Interest> ();
+				conn.CreateTable<DisplayInterest> ();
+				conn.CreateTable<DataSyncStatus> ();
+
+				foreach (var locationData in data.Locations) {
+					var location = locationData.ToLocation ();
+
+					location.Exhibits = new List<Exhibit> ();
+					location.Displays = new List<Display> ();
+					location.Interests = new List<Interest> ();
+
+					foreach (var exhibitData in locationData.Exhibits) {
+						var exhibit = exhibitData.ToExhibit ();
+
+						exhibits.Add (exhibitData.Id, exhibit);
+						location.Exhibits.Add (exhibit);
+					}
+
+					foreach (var displayData in locationData.Displays) {
+						var display = displayData.ToDisplay ();
+
+						display.Exhibit = exhibits[displayData.ExhibitId];
+
+						displays.Add (displayData.Id, display);
+						location.Displays.Add (display);
+					}
+
+					foreach (var interestData in locationData.Interests) {
+						var interest = interestData.ToInterest ();
+
+						interests.Add (interestData.Id, interest);
+						location.Interests.Add (interest);
+					}
+
+					conn.InsertWithChildren (location, recursive: true);
+				}
+					
+				foreach (var displayInterestsData in data.DisplayInterests) {
+					conn.Insert (new DisplayInterest {
+						Display = displays[displayInterestsData.DisplayId],
+						Interest = interests[displayInterestsData.InterestId]
+					});
+				}
+
+				// Update data sync status version
+				var dataSyncStatus = conn.Table<DataSyncStatus> ().First ();
+				dataSyncStatus.Version = latestVersion;
+				conn.Update (dataSyncStatus);
+
+				Console.WriteLine ("LATEST: {0}", dataSyncStatus.Version);
 			}
 		}
 	}
