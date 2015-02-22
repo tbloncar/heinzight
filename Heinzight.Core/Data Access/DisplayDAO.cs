@@ -14,7 +14,7 @@ namespace Heinzight.Core
 			public static List<Display> GetDisplaysForInterests(List<Interest> interests)
 			{
 				List<int> interestIds = interests.Select (i => i.ID).ToList();
-				var displays = new List<Display> ();
+				List<Display> displays;
 
 				using (var conn = Db.Instance.GetConnection ()) {
 					displays = (List<Display>)conn.Table<DisplayInterest> ()

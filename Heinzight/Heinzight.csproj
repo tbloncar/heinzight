@@ -143,19 +143,7 @@
       <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BeaconService.cs" />
-<<<<<<< HEAD
-    <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.cs" />
-    <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.designer.cs">
-      <DependentUpon>MainTourCollectionViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Tour\DetailsViewController.cs" />
-    <Compile Include="ViewControllers\Tour\DetailsViewController.designer.cs">
-=======
-    <Compile Include="ViewControllers\Landing\DetailsViewController.cs" />
-    <Compile Include="ViewControllers\Landing\DetailsViewController.designer.cs">
->>>>>>> 3c5b4a9787305a23f9cf5746dbe0d7f0f4725b55
-      <DependentUpon>DetailsViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Tour\MapViewController.cs" />
     <Compile Include="ViewControllers\Tour\MapViewController.designer.cs">
       <DependentUpon>MapViewController.cs</DependentUpon>
@@ -170,14 +158,9 @@
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\AgeSelectionViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\InterestSelectionViewController.xib" />
-<<<<<<< HEAD
-    <InterfaceDefinition Include="ViewControllers\Tour\MainTourCollectionViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Tour\DetailsViewController.xib" />
-=======
-    <InterfaceDefinition Include="ViewControllers\Landing\DetailsViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Tour\MapViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Tour\MainScreenTableController.xib" />
->>>>>>> 3c5b4a9787305a23f9cf5746dbe0d7f0f4725b55
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

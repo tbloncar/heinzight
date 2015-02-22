@@ -1,17 +1,16 @@
 ﻿<Properties StartupItem="Heinzight/Heinzight.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Cameron Ray’s iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight/ViewControllers/Tour/MainScreenTableController.cs">
     <Files>
-      <File FileName="Heinzight/ViewControllers/Landing/InterestSelectionViewController.cs" Line="74" Column="74" />
-      <File FileName="Heinzight/ViewControllers/Tour/MainScreenTableController.cs" Line="3" Column="3" />
-      <File FileName="Heinzight/ViewControllers/Tour/DisplayView.cs" Line="54" Column="54" />
-      <File FileName="Heinzight.Core/BeaconManager.cs" Line="1" Column="1" />
-      <File FileName="Heinzight/Main.cs" Line="1" Column="1" />
+      <File FileName="Heinzight/ViewControllers/Tour/MainScreenTableController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Heinzight" selected="True" />
+          <Node name="Heinzight.Core" expanded="True">
+            <Node name="Data Access" expanded="True" />
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

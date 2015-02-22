@@ -30,7 +30,7 @@ namespace Heinzight
 			base.ViewDidLoad ();
 
 			// Perform any additional setup after loading the view, typically from a nib.
-			exhibitView.LoadHtmlString (exhibitContent,null);
+//			exhibitView.LoadHtmlString (exhibitContent,null);
 
 		}
 	}
