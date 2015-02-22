@@ -143,7 +143,6 @@
       <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BeaconService.cs" />
-<<<<<<< Updated upstream
     <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.cs" />
     <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.designer.cs">
       <DependentUpon>MainTourCollectionViewController.cs</DependentUpon>
@@ -151,25 +150,26 @@
     <Compile Include="ViewControllers\Landing\DetailsViewController.cs" />
     <Compile Include="ViewControllers\Landing\DetailsViewController.designer.cs">
       <DependentUpon>DetailsViewController.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="ViewControllers\Tour\ExhibitCardViewController.cs" />
     <Compile Include="ViewControllers\Tour\ExhibitCardViewCell.cs" />
     <Compile Include="ViewControllers\Tour\MapViewController.cs" />
     <Compile Include="ViewControllers\Tour\MapViewController.designer.cs">
       <DependentUpon>MapViewController.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
+    <Compile Include="ViewControllers\Tour\MainScreenTableController.cs" />
+    <Compile Include="ViewControllers\Tour\MainScreenTableController.designer.cs">
+      <DependentUpon>MainScreenTableController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Tour\DisplayView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\AgeSelectionViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\InterestSelectionViewController.xib" />
-<<<<<<< Updated upstream
-    <InterfaceDefinition Include="ViewControllers\Tour\MainTourCollectionViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\DetailsViewController.xib" />
-=======
     <InterfaceDefinition Include="ViewControllers\Tour\MapViewController.xib" />
->>>>>>> Stashed changes
+    <InterfaceDefinition Include="ViewControllers\Tour\MainScreenTableController.xib" />
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
