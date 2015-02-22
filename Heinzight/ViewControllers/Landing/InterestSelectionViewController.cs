@@ -89,7 +89,11 @@ namespace Heinzight
 			// Set displays (cached for app lifecycle) based on user's selected interests
 			CurrentUser.Instance.Displays = DisplayDAO.GetDisplaysForInterests (userSelectedInterests);
 
-			PresentViewController (null, true, null);
+			var layout = new UICollectionViewFlowLayout ();
+//			layout.CollectionViewContentSize = new SizeF (320, 400);
+
+
+			PresentViewController (new MainTourCollectionViewController(layout), true, null);
 		}
 	}
 }

@@ -142,11 +142,16 @@
       <DependentUpon>InterestSelectionViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BeaconService.cs" />
+    <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.cs" />
+    <Compile Include="ViewControllers\Tour\MainTourCollectionViewController.designer.cs">
+      <DependentUpon>MainTourCollectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="ViewControllers\Landing\LandingViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\AgeSelectionViewController.xib" />
     <InterfaceDefinition Include="ViewControllers\Landing\InterestSelectionViewController.xib" />
+    <InterfaceDefinition Include="ViewControllers\Tour\MainTourCollectionViewController.xib" />
   </ItemGroup>
   <Import Project="..\Heinzight.Core\Heinzight.Core.projitems" Label="Shared" Condition="Exists('..\Heinzight.Core\Heinzight.Core.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
@@ -154,5 +159,6 @@
     <Folder Include="ViewControllers\" />
     <Folder Include="ViewControllers\Landing\" />
     <Folder Include="Services\" />
+    <Folder Include="ViewControllers\Tour\" />
   </ItemGroup>
 </Project>
