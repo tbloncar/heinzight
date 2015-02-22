@@ -13,18 +13,10 @@ namespace Heinzight
 	partial class DetailsViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel exhibitTitleLabel { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UIWebView exhibitView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (exhibitTitleLabel != null) {
-				exhibitTitleLabel.Dispose ();
-				exhibitTitleLabel = null;
-			}
-
 			if (exhibitView != null) {
 				exhibitView.Dispose ();
 				exhibitView = null;
