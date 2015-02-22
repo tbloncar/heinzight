@@ -3,11 +3,14 @@ using System.Linq;
 using System.Drawing;
 using System.Collections.Generic;
 
+using SQLiteNetExtensions.Extensions;
+
 using MonoTouch.UIKit;
 
 using Heinzight.Core;
 using Heinzight.Core.ORM;
 using Heinzight.Core.DAO;
+
 using MonoTouch.Foundation;
 using MonoTouch.CoreLocation;
 
@@ -93,7 +96,13 @@ namespace Heinzight
 //			layout.CollectionViewContentSize = new SizeF (320, 400);
 
 
-			PresentViewController (new MainTourCollectionViewController(layout), true, null);
+			//PresentViewController (new MainTourCollectionViewController(layout), true, null);
+
+			using (var conn = Db.Instance.GetConnection ()) {
+				var displays = conn.GetAllWithChildren<Display> ().ToList();
+				Display display = displays[0];
+				NavigationController.PushViewController(new DetailsViewController(display),true);
+			}
 		}
 	}
 }
