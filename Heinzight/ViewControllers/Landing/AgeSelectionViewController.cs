@@ -19,21 +19,12 @@ namespace Heinzight
 			SetCircleButtonDisplay (littleKidViewButton, littleKidInnerView);
 			SetCircleButtonDisplay (adultViewButton, adultInnerView);
 			continueButton.Hidden = true;
-			continueButton.Layer.CornerRadius = 12;
 
 			var adultTapGesture = new UITapGestureRecognizer (SelectAdult);
-			adultView.AddGestureRecognizer (adultTapGesture);
+			adultContainerView.AddGestureRecognizer (adultTapGesture);
 
 			var childTapGesture = new UITapGestureRecognizer (SelectChild);
-			littleKidView.AddGestureRecognizer (childTapGesture);
-
-			adultContainerView.BringSubviewToFront(adultIconView);
-			littleKidContainerView.BringSubviewToFront (littleKidIconView);
-			adultContainerView.BringSubviewToFront(adultViewButton);
-			littleKidContainerView.BringSubviewToFront (littleKidViewButton);
-
-			Console.WriteLine (adultIconView.Hidden);
-			Console.WriteLine (littleKidIconView.Hidden);
+			littleKidContainerView.AddGestureRecognizer (childTapGesture);
 
 			continueButton.TouchUpInside += (sender, e) => NextPage();
 		}

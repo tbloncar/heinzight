@@ -29,6 +29,10 @@ namespace Heinzight
 			mainLogoImageView.Image = UIImage.FromFile (nearbyLocations [0].LogoPath);
 			secondaryLogoImageView.Image = UIImage.FromFile (nearbyLocations [1].LogoPath);
 
+			continueButton.Layer.BorderColor = UIColor.White.CGColor;
+			continueButton.Layer.BorderWidth = 2.0f;
+			continueButton.Layer.CornerRadius = 16;
+
 			continueButton.TouchUpInside += (sender, e) => {
 				// Assign the nearest location to the current user
 				CurrentUser.Instance.Location = nearbyLocations [0];

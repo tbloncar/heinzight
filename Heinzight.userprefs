@@ -1,17 +1,26 @@
 ﻿<Properties StartupItem="Heinzight/Heinzight.csproj">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight.Core/Db.cs">
-    <Files>
-      <File FileName="Heinzight.Core/Db.cs" Line="3" Column="3" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Cameron Ray’s iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight/Services/BeaconService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Heinzight/Main.cs">
     <Files>
-      <File FileName="Heinzight/Info.plist" />
-      <File FileName="Heinzight/Services/BeaconService.cs" Line="6" Column="6" />
->>>>>>> 4954c6992bf1a98313a8189bdc47ed5de0ce5688
+      <File FileName="Heinzight/ViewControllers/Landing/LandingViewController.cs" Line="42" Column="42" />
+      <File FileName="Heinzight/Main.cs" Line="4" Column="4" />
+      <File FileName="Heinzight/ViewControllers/Landing/AgeSelectionViewController.cs" Line="1" Column="1" />
+      <File FileName="Heinzight/ViewControllers/Landing/InterestSelectionViewController.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Heinzight" expanded="True">
+            <Node name="Services" expanded="True" />
+            <Node name="ViewControllers" expanded="True">
+              <Node name="Landing" expanded="True" />
+            </Node>
+            <Node name="Main.cs" selected="True" />
+          </Node>
+          <Node name="Heinzight.Core" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
