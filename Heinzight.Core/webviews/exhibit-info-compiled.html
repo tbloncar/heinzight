@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			font-family:'avenir-next';
+			margin:0px;
+		}
+
+		img.exhibit-img{
+			width:100%;
+			height:auto;
+		}
+
+		ul.main-ul{
+			padding:0px;
+		}
+
+		li.main-bullet{
+			list-style-type:none;
+		}
+
+		div.topic-header{  
+			background-color:#B71234;
+			padding:20px 0 10px 30px;
+			text-transform:uppercase;
+			border-bottom:solid 3px #B30E30;
+		}
+
+		div.topic-header h3{
+			margin:0;
+			display:inline-block;
+			vertical-align:top;
+		}
+
+		/* Chevron CSS */
+		span.chevron{
+			margin-right:10px;
+			display:inline;
+			height:22px;
+			width:22px;
+		}
+
+		span.chevron-right{
+			background:url('assets/chevron-right.png') no-repeat;
+			height:22px;
+			width:22px;
+		}
+
+		span.chevron-down{
+			background:url('assets/chevron-down.png') no-repeat;
+			height:22px;
+			width:22px;
+		}
+
+		li.main-bullet span.chevron span.chevron-down,
+		li.main-bullet.active span.chevron span.chevron-right{
+			display:none;
+		}
+
+		li.main-bullet span.chevron span.chevron-right,
+		li.main-bullet.active span.chevron span.chevron-down{
+			display:inline-block;
+		}
+
+		/* CSS for the main content list transitions */
+		li.main-bullet div.topic-content{
+			overflow-y:hidden;
+			-webkit-transition: max-height 0.01s ease;
+			transition: max-height 0.1s ease;
+			max-height:0;
+		}
+
+		li.main-bullet.active div.topic-content{
+			max-height:1000px;
+			-webkit-transition:max-height 0.5s ease;
+			transition:max-height 0.5s ease;
+		}
+
+		/* Dummy content CSS */
+		li.main-bullet ul.topic-bullets{
+			list-style-type:disc;
+			font-size:30px;
+			color:#B71234;
+		}
+
+		ul.topic-bullets p{
+			color:#000000;
+			font-size:16px;
+		}
+	</style>
+</head>
+<body>
+	<img class="exhibit-img" src="" />
+	<div class="exhibit-content">
+		<ul class="main-ul">
+			<li class="main-bullet">
+				<div class="topic-header">
+					<span class="chevron">
+						<span class="chevron-down"></span>
+						<span class="chevron-right"></span>
+					</span>
+					<h3>Topic 1</h3>
+				</div>
+				<div class="topic-content">
+					<!-- interpolate content here -->
+					<ul class="topic-bullets">
+						<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+						<li><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+						<li><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></li>
+						<li><p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p></li>
+						<li><p>Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p></li>
+					</ul>
+				</div>
+			</li>
+			<li class="main-bullet">
+				<div class="topic-header">
+					<span class="chevron">
+						<span class="chevron-down"></span>
+						<span class="chevron-right"></span>
+					</span>
+					<h3>Topic 2</h3>
+				</div>
+				<div class="topic-content">
+					<!-- interpolate content here -->
+					<ul class="topic-bullets">
+						<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+						<li><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+						<li><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></li>
+						<li><p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p></li>
+						<li><p>Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p></li>
+					</ul>
+				</div>
+			</li>
+			<li class="main-bullet">
+				<div class="topic-header">
+					<span class="chevron">
+						<span class="chevron-down"></span>
+						<span class="chevron-right"></span>
+					</span>
+					<h3>Topic 3</h3>
+				</div>
+				<div class="topic-content">
+					<!-- interpolate content here -->
+					<ul class="topic-bullets">
+						<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+						<li><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+						<li><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></li>
+						<li><p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p></li>
+						<li><p>Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded',function(event){
+			var els = document.getElementsByClassName('main-bullet');
+
+			console.log(els);
+
+			for(i = 0; i < els.length; i++){
+
+			els[i].onclick = function(){
+				for(j = 0; j < els.length; j++){
+					els[j].classList.remove('active');
+				}
+				this.classList.add('active');
+			};
+			}
+		});
+	</script>
+</body>
+</html>
