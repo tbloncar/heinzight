@@ -13,13 +13,13 @@ namespace Heinzight
 	partial class MainScreenTableController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIScrollView scrollView { get; set; }
+		MonoTouch.UIKit.UITableView contentTableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (scrollView != null) {
-				scrollView.Dispose ();
-				scrollView = null;
+			if (contentTableView != null) {
+				contentTableView.Dispose ();
+				contentTableView = null;
 			}
 		}
 	}
