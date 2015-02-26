@@ -8,7 +8,7 @@ namespace Heinzight
 {
 	public class DisplayListTableViewSource : UITableViewSource
 	{
-		List<Display> displayList;
+		public List<Display> displayList { get; set; }
 
 		public DisplayListTableViewSource (List<Display> displays)
 		{

@@ -8,6 +8,9 @@ namespace Heinzight
 {
 	public partial class MainScreenTableController : UIViewController
 	{
+
+		DisplayListTableViewSource _tableViewSource = new DisplayListTableViewSource(CurrentUser.Instance.Displays);
+
 		public MainScreenTableController () : base ("MainScreenTableController", null)
 		{
 		}
@@ -23,7 +26,7 @@ namespace Heinzight
 
 		void FinalizeView()
 		{
-			contentTableView.Source = new DisplayListTableViewSource (CurrentUser.Instance.Displays);
+			contentTableView.Source = _tableViewSource;
 			contentTableView.AllowsSelection = false;
 			contentTableView.EstimatedRowHeight = 350;
 			contentTableView.RowHeight = UITableView.AutomaticDimension;
@@ -36,10 +39,10 @@ namespace Heinzight
 			var bs = new BeaconService ();
 			bs.StartService ();
 			
-			var userDisplays = CurrentUser.Instance.Displays;
-			BeaconManager.Instance.BeaconsUpdated += beaconList => {
-				
-			};
+//			BeaconManager.Instance.BeaconsUpdated += beaconList => {
+//				Update displays here
+//				contentTableView.ReloadData();
+// 			};
 		}
 
 		void ShowMenu()
