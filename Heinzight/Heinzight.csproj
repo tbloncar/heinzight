@@ -161,7 +161,6 @@
     <Compile Include="ViewControllers\Tour\MainScreenTableController.designer.cs">
       <DependentUpon>MainScreenTableController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\Tour\DisplayView.cs" />
     <Compile Include="ViewControllers\Tour\MenuViewController.cs" />
     <Compile Include="ViewControllers\Tour\MenuViewController.designer.cs">
       <DependentUpon>MenuViewController.cs</DependentUpon>

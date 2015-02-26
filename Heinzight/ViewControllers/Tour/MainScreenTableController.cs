@@ -1,21 +1,13 @@
 ﻿
 using System;
-using System.Linq;
-using System.Drawing;
 using System.Collections.Generic;
-
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-
 using Heinzight.Core;
-using Heinzight.Core.ORM;
 
 namespace Heinzight
 {
 	public partial class MainScreenTableController : UIViewController
 	{
-		Dictionary<Display, DisplayView> displayViewDictionary = new Dictionary<Display, DisplayView>();
-
 		public MainScreenTableController () : base ("MainScreenTableController", null)
 		{
 		}
@@ -31,7 +23,12 @@ namespace Heinzight
 
 		void FinalizeView()
 		{
-
+			contentTableView.Source = new DisplayListTableViewSource (CurrentUser.Instance.Displays);
+			contentTableView.AllowsSelection = false;
+			contentTableView.EstimatedRowHeight = 350;
+			contentTableView.RowHeight = UITableView.AutomaticDimension;
+			contentTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+			contentTableView.ReloadData ();
 		}
 
 		void InitBeaconService()

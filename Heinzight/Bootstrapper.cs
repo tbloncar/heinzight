@@ -15,6 +15,7 @@ namespace Heinzight
 			var db = Db.Instance;
 
 			// Setup and seed the database
+			db.Delete ();
 			db.Create ();
 			db.Seed ();
 

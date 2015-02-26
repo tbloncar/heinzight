@@ -35,7 +35,6 @@ namespace Heinzight
 		{
 			if (_window == null)
 				_window = new UIWindow (UIScreen.MainScreen.Bounds);
-//			RectangleF bounds = UIScreen.MainScreen.Bounds;
 			_window.Frame = UIScreen.MainScreen.Bounds;
 			_window.Bounds = UIScreen.MainScreen.Bounds;
 

@@ -12,6 +12,30 @@ namespace Heinzight
 		public static readonly UINib Nib = UINib.FromName ("DisplayListTableViewCell", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("DisplayListTableViewCell");
 
+		public UIImageView DisplayImageView
+		{
+			get 
+			{
+				return displayImageView;
+			}
+		}
+
+		public UILabel DisplayLabel
+		{
+			get 
+			{
+				return this.displayLabel;
+			}
+		}
+
+		public UILabel ExhibitLabel
+		{
+			get 
+			{
+				return this.exhibitLabel;
+			}
+		}
+
 		public DisplayListTableViewCell (IntPtr handle) : base (handle)
 		{
 		}
